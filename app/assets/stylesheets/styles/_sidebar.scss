@@ -1,0 +1,32 @@
+/* Stylings for sidebar */
+div#sidebar {
+    box-shadow: 5px 0px 3px $shadow_grey;
+    background-color: $off_white;
+    width: 250px;
+    position: fixed;
+    float: left;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#sidebar > a {
+    padding: 10px;
+    margin: 0px;
+    color: black;
+    @include selectable($off_white)
+}
+
+/* Content next to a sidebar*/
+
+.sidebared_content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;.
+    text-align: center;
+    margin-left: 250px;
+    min-width: 750px;
+}

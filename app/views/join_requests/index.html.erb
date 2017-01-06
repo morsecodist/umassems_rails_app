@@ -1,0 +1,18 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <h1>Applications To Join</h1>
+    <div class="top-bar">
+        <div id="processed_button">Past Applications</div>
+        <div id="pending_button" class="selected">Pending Applications</div>
+    </div>
+    <div id ="pending_requests" >
+        <% @pending_join_requests.each do |join_request| %>
+            <%= render join_request %>
+        <% end %>
+    </div>
+    <div id="processed_requests">
+        <% @processed_join_requests.each do |join_request| %>
+            <%= render join_request %>
+        <% end %>
+    </div>
+</div>

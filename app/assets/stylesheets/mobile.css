@@ -1,0 +1,8 @@
+/*
+ *= require mobile_main
+ *= require jquery.mobile
+ *= require jquery.mmenu
+*/
+div#header {
+    min-width: 1625px;
+}

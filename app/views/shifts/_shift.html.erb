@@ -1,0 +1,44 @@
+<div class="full-shift-box triple_state <%= shift.status %>">
+<div class = "visible">
+    <div><p><span><%= shift.shift_time.strftime("%m/%d/%Y") %></span></p></div>
+    <div><p><span><%= shift.shift_time.strftime("%A") %></span></p></div>
+    <div><p><span><%= shift.shift_time.strftime("%H:%M") %></span></p></div>
+    <div><p><span><%= shift.venue_name %></p></div>
+    <div><p><span><%= shift.event %></p></div>
+
+    <div class="xholder">
+        <%= link_to shift, remote: true, method: :delete, :class => "delete_shift" do %>
+            <%= image_tag "delete85.svg" %>
+        <% end %>
+    </div>
+</div>
+<div class='hidden'>
+    <% if shift.ones %>
+        <% shift.one_user_shifts.each do |position| %>
+        <p><%= form_tag assign_one_path(position.id), method: 'patch', :class => 'assign_shift', remote: true do %>
+                <span class = 'bold'>One: </span>
+            <%= text_field_tag(:name, position.one.first + if position.one.last then (' ' + position.one.last) else '' end, :class => "user_input one_assign")%>
+                <%= submit_tag 'Assign' %>
+            <% end %></p>
+    <% end %>
+    <% end %>
+    <% if shift.twos %>
+            <% shift.two_user_shifts.each do |position| %>
+            <p><%= form_tag assign_two_path(position.id), method: "patch", :class => "assign_shift", remote: true do %>
+                <span class = "bold">Probationary: </span>
+                    <%= text_field_tag(:name, position.two.first + if position.two.last then (' ' + position.two.last) else '' end, :class => "user_input two_assign")%>
+                <%= submit_tag "Assign", :class => "assign_shift" %>
+            <% end %></p>
+    <% end %>
+    <% end %>
+    <% if shift.volunteers %>
+            <% shift.vol_user_shifts.each do |position| %>
+        <p><%= form_tag assign_volunteer_path(position.id), method: "patch", :class => "assign_shift", remote: true do %>
+                    <span class = "bold">Volunteer: </span>
+                        <%= text_field_tag(:name, position.volunteer.first + if position.volunteer.last then (' ' + position.volunteer.last) else '' end, :class => "user_input volunteer_assign")%>
+                    <%= submit_tag "Assign", :class => "assign_shift" %>
+            <% end %></p>
+    <% end %>
+    <% end %>
+</div>
+</div>

@@ -1,0 +1,65 @@
+<div class="static-info">
+    <div class="row-cont">
+    <div class="noticediv">
+    <% flash.each do |key, msg| %>
+        <%= content_tag :div, msg, :id => key %>
+    <% end %>
+        </div>
+    <div class="column-cont">
+    <div>
+
+    <h2>Attention!</h2>
+    <p>This is page is for members of UmassEMS members to activate their accounts only. Please do not attempt to create an account if you have not been oficially accepted into UmassEMS. The system will not allow you to create an account. If you would like to join UmassEMS please see our <%= link_to "joining information", '/join_info' %>.</p>
+    <h2>Passwords</h2>
+    <p>Please make a strong password. There is NO LIMIT to the number of characters your password can have. You can use spaces and punctuation. While short passwords are allowed, you are encouraged to make long passwords or passphrases. Use a sentance, a mnemonic, a password manager generated password, anything you want.</p>
+    <h2>Do I have to use a Umass Email?</h2>
+    <p>Yes. We are a Umass Agency and every member of our agency must have a valid Umass email address.</p>
+    </div>
+<div>
+<%= form_for :user, url: '/member_portal/users' do |f| %>
+    <div>
+    <table>
+    <tr>
+        <td>
+    <p>First Name</p>
+    <%= f.text_field :first %>
+        </td>
+        <td>
+    <p>Last Name</p>
+    <%= f.text_field :last %>
+        </td>
+    </tr>
+        <tr>
+            <td>
+    <P>Massachusetts EMT Number</P>
+    <%= f.text_field :mass_number %>
+            </td>
+                <td>
+    <p>Umass Email</p>
+    <%= f.text_field :email %>
+            </td>
+            </tr>
+        <tr>
+            <td>
+    <P>Password</P>
+    <%= f.password_field :password %>
+            </td>
+                <td>
+    <P>Confirm Password</P>
+    <%= f.password_field :password_confirmation %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+    <P>Phone Number</P>
+    <%= f.text_field :phone_number %>
+            </td>
+        </tr>
+    </table>
+        </div>
+    <%= f.submit "Activate!" %>
+<% end %>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,66 @@
+// Place all the styles related to the shifts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Stylings for new shift form */
+
+.new_shift {
+    box-shadow: 2px 2px 3px #888888;
+    background-color: azure;
+    margin: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 700px;
+    flex-direction: row;
+    align-content: center;
+}
+
+.new_shift > div {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.new_shift div input {
+    font-size: 20px;
+    margin: 0px;
+    width: 100%;
+    align-self: center;
+    resize: horizontal;
+}
+
+.new_shift div.number_field input{
+    text-align: center;
+    width: 40px;
+}
+
+.new_shift > div.number_field {
+    flex-shrink: 2;
+    flex-grow: 0;
+    min-width: 75px;
+}
+
+#add_shift {
+    width: 80%;
+    font-size: 20px;
+    @include selectable(#d22626);
+    box-shadow: none;
+    border: none;
+    border-radius: 2px;
+    color: floralwhite;
+    padding: 7px;
+}
+
+#add_shift_div {
+    min-width: 75px;
+}
+
+.new_shift form div p {
+    margin: 5px;
+}

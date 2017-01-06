@@ -1,0 +1,47 @@
+<div class="join_request_box triple_state <%= join_request.status %>">
+<div class="visible">
+    <div><p><span><%= join_request.first %> <%= join_request.last %></span></p></div>
+    <div><p><span><%= join_request.major %></span></p></div>
+    <div><p><span><%= join_request.grad_year %></span></p></div>
+    <div class="xholder">
+        <%= link_to accept_request_path(join_request.id), remote: true, method: "patch", :class => "accept_request" do %>
+            <%= image_tag "check.svg" %>
+        <% end %>
+    </div>
+    <div class="xholder">
+        <%= link_to reject_request_path(join_request.id), remote: true, method: "patch", :class => "reject_request" do %>
+            <%= image_tag "delete85.svg" %>
+        <% end %>
+    </div>
+</div>
+<div class="hidden column-cont">
+    <div>
+        <p><span><span class = "bold">Student ID:</span> <%= join_request.student_id %></span></p>
+        <p><span><span class = "bold">Email:</span> <%= join_request.email %></span></p>
+        <p><span><span class = "bold">Inteded Career:</span> <%= join_request.career_goal %></span></p>
+        <p><span><span class = "bold">Certification Source:</span> <%= join_request.cert_source %></span></p>
+        <p><span><span class = "bold">EMT Number:</span> <%= join_request.emt_number %></span></p>
+        <p><span><span class = "bold">EMT Expiration Date:</span> <%= join_request.emt_exp_date %></span></p>
+        <p><span><span class = "bold">CPR Expiration Date:</span> <%= join_request.cpr_exp_date %></span></p>
+        <p><span><span class = "bold">NREMT Number:</span> <%= join_request.nremt_number %></span></p>
+    </div>
+    <div>
+        <p><span><span class = "bold">Additional Certifications:</span> <%= join_request.other_certs %></span></p>
+        <p><span><span class = "bold">Previous Experience:</span> 
+            <% if(join_request.none) %>
+            <%= "None" %>
+            <% end %>
+            <% if(join_request.ma_ambulance) %>
+            <%= "MA Private Ambulance " %>
+            <% end %>
+            <% if(join_request.ma_fire) %>
+            <%= "MA Fire Department " %>
+            <% end %>
+            <% if(join_request.fire_ambulance) %>
+            <%= "Fire Department or Private Ambulance Outside of MA" %>
+            <% end %></span></p>
+        <p><span><span class = "bold">Additional Experience:</span> <%= join_request.other_experience %></span></p>
+        <p><span><span class = "bold">Additional Information:</span> <%= join_request.other_info %></span></p>
+    </div>
+</div>
+</div>

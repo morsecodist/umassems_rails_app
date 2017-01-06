@@ -1,0 +1,27 @@
+/* This styling is for creating form pages */
+div.form_page {
+    padding: 20px;
+    text-align: center;
+}
+
+div.form_page > div {
+    width:1000px;
+    margin: 50px;
+    padding: 40px;
+    box-shadow: 5px 5px 3px $shadow_grey;
+    border:  1px solid grey;
+    text-align: left;
+    background-color: $off_white;
+    display: inline-block;
+    font-size: 20px;
+}
+
+div.form_page > div input {
+    font-size: 20px;
+}
+
+div.form_page > div textarea {
+    width: 75%;
+    height: 100px;
+    font-size: 20px;
+}

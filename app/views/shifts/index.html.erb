@@ -1,0 +1,45 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <h1>Director of Operations Shift Management Center</h1>
+    <% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+    <%= form_tag shifts_path, method: "post", :class => "new_shift",  remote: true do %>
+        <div>
+            <p>Date</p>
+            <%= text_field_tag :shift_date%>
+        </div>
+        <div>
+            <p>Time</p>
+            <%= text_field_tag :time %>
+        </div>
+    <%= fields_for :shift do |s| %>
+        <div>
+            <p>Venue</p>
+            <%= s.text_field :venue_name %>
+        </div>
+        <div>
+            <p>Event</p>
+            <%= s.text_field :event %>
+        </div>
+    <% end %>
+        <div class="number_field">
+            <p>Ones</p>
+            <%= number_field_tag(:ones,'1') %>
+        </div>
+        <div class="number_field">
+            <p>Twos</p>
+            <%= number_field_tag(:twos,'1') %>
+        </div>
+        <div class="number_field">
+            <p>Volunteers</p>
+            <%= number_field_tag(:volunteers,'1') %>
+        </div>
+        <div id="add_shift_divsubmit">
+            <%= submit_tag "Add", :id => "add_shift" %>
+        </div>
+    <% end %>
+     <div class="shifts-list">
+         <%= render @shifts %>
+    </div>
+</div>

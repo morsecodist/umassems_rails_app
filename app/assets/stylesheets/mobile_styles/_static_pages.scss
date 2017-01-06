@@ -1,0 +1,8 @@
+.column-cont {
+    flex-direction: column;
+}
+
+.column-cont > div {
+    flex: 1 0 100%;
+    align-content: center;
+}

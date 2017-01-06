@@ -1,0 +1,22 @@
+/* This is used to make hover and active effects throughout the site */
+@mixin selectable($color, $surpress_active: false) {
+    background-color: $color;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($color,15);
+    }
+    &.selected {
+        background-color: darken($color,45)
+    }
+    &.selected:hover {
+        background-color: darken($color,60);
+    }
+    @if $surpress_active != true {
+        &.selected:active {
+            background-color: darken($color,70);
+        }
+        &:active {
+            background-color: darken($color,25);
+        }        
+    }
+}

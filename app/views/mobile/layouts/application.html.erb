@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Umass EMS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'mobile', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'mobile', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <%= favicon_link_tag(source="umassemslogo_navy.png") %>
+</head>
+<body>
+    <div data-role = 'page' id = 'mobile_page_container'>
+    <div data-role='header'>
+
+    <header id = 'mobile_header'>
+        <a id = "mobile_menu_open" href='#main_menu'>☰</a>
+        <span>Umass EMS</span>
+    </header>
+        </div>
+    <div data-role='content'>
+    <nav id="main_menu">
+        <ul>
+            <li class="<%= 'mm-selected' if current_page.include? '/member_portal' %>"><%= link_to "Member Portal", '/member_portal/login' %>
+              <%= render 'mobile/layouts/member_portal_menu.html.erb' if ((current_page.include? '/member_portal') && current_user)%>
+            </li>
+            <li class="<%= 'mm-selected' if current_page == '/staff' %>"><%= link_to "Staff", '/staff' %></li>
+            <li class="<%= 'mm-selected' if current_page == '/about' %>"><%= link_to "About Us", '/about' %></li>
+            <li class="<%= 'mm-selected' if current_page.include? '/join_info' %>"><%= link_to "Join", '/join_info' %></li>
+            <li class="<%= 'mm-selected' if current_page == '/class_info' %>"><%= link_to "Class Info", '/class_info' %></li>
+            <li class="<%= 'mm-selected' if current_page == '/cpr' %>"><%= link_to "Learn CPR", '/cpr' %></li>
+            <li class="<%= 'mm-selected' if current_page == '/website' %>"><%= link_to "Website Info", '/website' %></li>
+        </ul>
+    </nav>
+        <%= yield %>
+    </div>
+    </div>
+
+</body>
+</html>

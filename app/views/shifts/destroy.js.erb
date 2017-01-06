@@ -1,0 +1,5 @@
+/*global $, jQuery, alert*/
+$('.delete_shift').bind('ajax:success', function () {
+    "use strict";
+    $(this).closest('.full-shift-box').fadeOut();
+});

@@ -1,0 +1,18 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <h1>Certificates to Approve</h1>
+    <div class="top-bar">
+        <div id="processed_button">Past Certificates</div>
+        <div id="pending_button" class="selected">Pending Certificates</div>
+    </div>
+    <div id ="pending_requests" >
+        <% @pending_certificates.each do |certificate| %>
+        <%= render 'approval_certificate.html.erb', :certificate => certificate %>
+        <% end %>
+    </div>
+    <div id="processed_requests">
+        <% @processed_certificates.each do |certificate| %>
+            <%= render 'approval_certificate.html.erb', :certificate => certificate %>
+        <% end %>
+    </div>
+</div>

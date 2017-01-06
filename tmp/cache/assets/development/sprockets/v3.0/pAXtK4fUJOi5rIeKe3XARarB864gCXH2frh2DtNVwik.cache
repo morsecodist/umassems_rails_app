@@ -1,0 +1,10 @@
+I"¢(function() {
+  $(function() {
+    return $('.expiration_date').datepicker({
+      orientation: 'top',
+      dateFormat: 'mm/dd/yy'
+    });
+  });
+
+}).call(this);
+:ET

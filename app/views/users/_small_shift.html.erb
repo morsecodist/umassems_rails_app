@@ -1,0 +1,24 @@
+<div class="triple_state small <%= user_shift.status %>">
+<div class = "visible">
+    <div><p><%= user_shift.shift_time.strftime("%H:%M") %></p></div>
+    <div><p><%= user_shift.venue_name %></p></div>
+    <div><p><%= user_shift.event %></p></div>
+</div>
+<div class="hidden">
+    <% if user_shift.ones %>
+        <% user_shift.ones.each do |one| %>
+        <p><span><span class = "bold">Probationary: </span><%= one.first + " " + if one.last then one.last else "" end%></span></p>
+        <% end %>
+    <% end %>
+    <% if user_shift.twos %>
+        <% user_shift.twos.each do |two| %>
+        <p><span><span class = "bold">Probationary: </span><%= two.first + " " + if two.last then two.last else "" end%></span></p>
+        <% end %>
+    <% end %>
+    <% if user_shift.volunteers %>
+        <% user_shift.volunteers.each do |volunteer| %>
+        <p><span><span class = "bold">Volunteer: </span><%= volunteer.first + " " + if volunteer.last then volunteer.last else "" end%></span></p>
+        <% end %>
+    <% end %>
+</div>
+</div>

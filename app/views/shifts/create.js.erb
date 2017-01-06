@@ -1,0 +1,24 @@
+/*global $, jQuery, alert*/
+$('.new_shift').bind('ajax:success', function () {
+    "use strict";
+    $(".new_shift input").not("#add_shift").val("");
+    $(".shifts-list").empty();
+    $("<%= j (render @shifts) %>").appendTo(".shifts-list");
+    $('div.number_field input').val('1');
+    $('.hidden').hide();
+    $('.user_input').autocomplete({
+        autoFocus: true,
+        source: function (request, response) {
+            $.ajax({
+                url: "/member_portal/shift_management/user_names_list.json",
+                dataType: 'json',
+                success: function (data) {
+                    var re = $.ui.autocomplete.escapeRegex(request.term), matcher = new RegExp("^" + re, "i");
+                    response($.grep(data, function (item) {return matcher.test(item); }));
+                }
+            });
+        },
+        minLength: 1,
+        autoFill: true
+    });
+});

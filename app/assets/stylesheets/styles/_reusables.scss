@@ -1,0 +1,118 @@
+/* Classes to be used accross pages but not on every page */
+
+/* Handles the tri-colored boxes used for indexes */
+.triple_state {
+    @include index-box();
+    &.completed {
+        @include selectable($background_green,true);
+    }
+    &.pending {
+        @include selectable($background_yellow,true);
+    }
+    &.failed {
+        @include selectable($background_red,true);
+    }
+}
+
+/* makes top tab bars for looking at different indexes */
+.top-bar {
+    display: flex;
+    margin: 15px;
+}
+
+.top-bar > div {
+    flex: 1 1 auto;
+    padding: 10px;
+    font-size: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    @include selectable($off_white);
+}
+
+/* These styles are for notice boxes */
+/* Change me*/
+#notice {
+    width: 50%;
+    margin: 20px;
+    display: inline-block;
+    background-color: $background_red;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+#success {
+  width: 50%;
+  margin: 20px;
+  display: inline-block;
+  background-color: #84ff5b;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.noticediv {
+    height: 100px;
+}
+
+/* This class is for form help text */
+.help_text {
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* This is here so spans can be used to change color of helptext (specifically for the red class) */
+.help_text:not(span) {
+    color: dimgrey;
+}
+
+/* This is for using p to keep mutple elements on the same line while wrapping but not create a line break */
+p.same_line {
+    display: inline-block;
+    font-size: inherit;
+}
+
+/* These are to outline form fields in red that were mandatory but left empty by user */
+.missing {
+    border:  1px solid red;
+}
+
+div.missing {
+    border:  1px solid red;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+/* Self-explanitory styles with one attribute */
+.greytext {
+    color: darkgrey;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.red {
+    color: red;
+}
+
+div.user_alert {
+  background-color: darken(#FFFF99,5);
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+div.good_notice {
+  background-color: #84ff5b;
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+.no_bullets li{
+  list-style-type: none;
+}

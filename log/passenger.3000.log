@@ -1,0 +1,1595 @@
+[ 2015-10-14 17:30:40.2936 9708/7ff6423cc780 age/Wat/WatchdogMain.cpp:1275 ]: Starting Passenger watchdog...
+[ 2015-10-14 17:30:40.2982 9711/7ff5e2a5a780 age/Cor/CoreMain.cpp:956 ]: Starting Passenger core...
+[ 2015-10-14 17:30:40.2984 9711/7ff5e2a5a780 age/Cor/CoreMain.cpp:233 ]: Passenger core running in multi-application mode.
+[ 2015-10-14 17:30:40.3005 9711/7ff5e2a5a780 age/Cor/CoreMain.cpp:706 ]: Passenger core online, PID 9711
+[ 2015-10-14 17:30:40.3088 9718/7f2712ce0780 age/Ust/UstRouterMain.cpp:503 ]: Starting Passenger UstRouter...
+[ 2015-10-14 17:30:40.3094 9718/7f2712ce0780 age/Ust/UstRouterMain.cpp:316 ]: Passenger UstRouter online, PID 9718
+/usr/bin/env: bash: No such file or directory
+App 9754 stdout: 
+App 9754 stderr: /usr/bin/env: bash
+App 9754 stderr: : No such file or directory
+[ 2015-10-14 17:30:46.0778 9711/7ff5c9779700 age/Cor/App/Implementation.cpp:303 ]: Could not spawn process for application /home/celeritas365/Documents/rails_workspace/umassemsapp: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 607270f0
+  Error details saved to: /tmp/passenger-error-lj1eyo.html
+  Message from application: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/usr/bin/env: bash: No such file or directory
+</pre>
+
+Cannot execute rm: No such file or directory
+terminate called after throwing an instance of 'Passenger::RuntimeException'
+  what():  Cannot remove directory '/tmp/passenger.spawn-debug.XXXXScYQyh'
+[ pid=9711, timestamp=1444858246 ] Process aborted! signo=SIGABRT(6), reason=SI_TKILL, signal sent by PID 9711 with UID 1000, si_addr=0x3e8000025ef, randomSeed=1444858240
+[ pid=9711 ] Crash log dumped to /var/tmp/passenger-crash-log.1444858246
+[ pid=9711 ] Date, uname and ulimits:
+ERROR: Could not run 'date'!
+ERROR: Could not run 'uname -mprsv'!
+time(seconds)        unlimited
+file(blocks)         unlimited
+data(kbytes)         unlimited
+stack(kbytes)        8192
+coredump(blocks)     0
+memory(kbytes)       unlimited
+locked memory(kbytes) 64
+process              62211
+nofiles              1024
+vmemory(kbytes)      unlimited
+locks                unlimited
+[ pid=9711 ] Phusion Passenger version: 5.0.20
+[ pid=9711 ] libc backtrace available!
+--------------------------------------
+[ pid=9711 ] Backtrace with 28 frames:
+/usr/bin/env: bash: No such file or directory
+ERROR: cannot execute '/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby "/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/backtrace-sanitizer.rb"' for sanitizing the backtrace, writing to stderr directly...
+Passenger core[0x4937b0]
+Passenger core[0x492897]
+Passenger core[0x492d38]
+Passenger core[0x493661]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x10340)[0x7ff5e244c340]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x39)[0x7ff5e1256cc9]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x148)[0x7ff5e125a0d8]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x155)[0x7ff5e1b61535]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5e6d6)[0x7ff5e1b5f6d6]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5d799)[0x7ff5e1b5e799]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(__gxx_personality_v0+0x52a)[0x7ff5e1b5f34a]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(+0xfff3)[0x7ff5e15f4ff3]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(_Unwind_Resume+0x57)[0x7ff5e15f5517]
+Passenger core[0x50c1e4]
+Passenger core[0x45e461]
+Passenger core[0x591f43]
+Passenger core[0x593e27]
+Passenger core[0x5b107e]
+Passenger core[0x5b25b2]
+Passenger core[0x5bb7b7]
+Passenger core[0x5bb8a5]
+Passenger core[0x5cc800]
+Passenger core[0x5ba28d]
+Passenger core[0x64c97d]
+Passenger core[0x4b8fe0]
+Passenger core[0x649043]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8182)[0x7ff5e2444182]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x6d)[0x7ff5e131a47d]
+--------------------------------------
+[ pid=9711 ] Dumping additional diagnostical information...
+--------------------------------------
+### Backtraces
+Thread 'Main thread' (0x7ff5e2a5a780, LWP 9711):
+     in 'void waitForExitEvent()' (CoreMain.cpp:849)
+     in 'void mainLoop()' (CoreMain.cpp:742)
+     in 'int runCore()' (CoreMain.cpp:968)
+
+Thread 'Pool analytics collector' (0x7ff5e2a58700, LWP 9711):
+     in 'static void Passenger::ApplicationPool2::Pool::collectAnalytics(Passenger::ApplicationPool2::PoolPtr)' (AnalyticsCollection.cpp:65)
+
+Thread 'Pool garbage collector' (0x7ff5e2a17700, LWP 9711):
+     in 'static void Passenger::ApplicationPool2::Pool::garbageCollect(Passenger::ApplicationPool2::PoolPtr)' (GarbageCollection.cpp:61)
+
+Thread 'Main event loop: thread 1' (0x7ff5e0a1e700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 1: libuv poller' (0x7ff5e021d700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 2' (0x7ff5cbfff700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 2: libuv poller' (0x7ff5e019c700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 3' (0x7ff5cb7fe700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 3: libuv poller' (0x7ff5e011b700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 4' (0x7ff5caffd700, LWP 9711):
+     (empty)
+
+Thread 'Main event loop: thread 4: libuv poller' (0x7ff5e009a700, LWP 9711):
+     (empty)
+
+Thread 'API event loop' (0x7ff5ca7fc700, LWP 9711):
+     (empty)
+
+Thread 'API event loop: libuv poller' (0x7ff5c9ffb700, LWP 9711):
+     (empty)
+
+Thread 'Load balancer' (0x7ff5c9f7a700, LWP 9711):
+     (empty)
+
+Thread 'Group process spawner: /home/celeritas365/Documents/rails_workspace/umassemsapp/public (development)' (0x7ff5c9779700, LWP 9716):
+     in 'void Passenger::SpawningKit::SmartSpawner::startPreloader()' (SmartSpawner.h:260)
+     in 'virtual Passenger::SpawningKit::Result Passenger::SpawningKit::SmartSpawner::spawn(const Passenger::SpawningKit::Options&)' (SmartSpawner.h:777)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const Passenger::SpawningKit::SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (SpawningAndRestarting.cpp:94)
+
+### Request handler state (thread 1)
+
+{
+	"active_client_count" : 1,
+	"active_clients" : 
+	{
+		"1-1" : 
+		{
+			"connected_at" : 
+			{
+				"local" : "Wed Oct 14 17:30:46 2015",
+				"relative" : "0s ago",
+				"timestamp" : 1444858246.018143
+			},
+			"connection_state" : "ACTIVE",
+			"current_request" : 
+			{
+				"app_sink_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"app_source_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"flags" : 
+				{
+					"dechunk_response" : true,
+					"https" : false,
+					"request_body_buffering" : false
+				},
+				"host" : "24.62.204.109:3000",
+				"http_major" : 1,
+				"http_minor" : 1,
+				"http_state" : "COMPLETE",
+				"method" : "GET",
+				"path" : "/",
+				"refcount" : 2,
+				"request_body_already_read" : 0,
+				"request_body_fully_read" : true,
+				"request_body_type" : "NO_BODY",
+				"response_begun" : false,
+				"session_checkout_try" : 0,
+				"started_at" : 
+				{
+					"local" : "Wed Oct 14 17:30:46 2015",
+					"relative" : "0s ago",
+					"timestamp" : 1444858246.018227
+				},
+				"state" : "CHECKING_OUT_SESSION",
+				"sticky_session" : false,
+				"want_keep_alive" : false
+			},
+			"lingering_request_count" : 0,
+			"name" : "1-1",
+			"number" : 1,
+			"output_channel_state" : 
+			{
+				"bytes_buffered" : 
+				{
+					"bytes" : 0,
+					"human_readable" : "0 bytes"
+				},
+				"callback_in_progress" : false,
+				"mode" : "IN_MEMORY_MODE",
+				"nbuffers" : 0,
+				"reader_state" : "RS_INACTIVE"
+			},
+			"refcount" : 2,
+			"requests_begun" : 1
+		}
+	},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 127,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 3,
+		"active_memory" : 
+		{
+			"bytes" : 1536,
+			"human_readable" : "1.5 KB"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9711,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 1338,
+	"total_clients_accepted" : 1,
+	"total_requests_begun" : 1,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 2)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9711,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 3)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9711,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 4)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9711,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler config (thread 1)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 2)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 3)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 4)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Pool state (simple)
+----------- General information -----------
+Max pool size : 6
+App groups    : 1
+Processes     : 0
+Requests in top-level queue : 0
+
+----------- Application groups -----------
+/home/celeritas365/Documents/rails_workspace/umassemsapp/public (development):
+  App root: /home/celeritas365/Documents/rails_workspace/umassemsapp
+  (spawning 1 new process...)
+  Requests in queue: 1
+
+
+### mbuf stats
+
+nfree_mbuf_blockq  : 0
+nactive_mbuf_blockq: 3
+mbuf_block_chunk_size: 512
+
+### Pool state (XML)
+<?xml version="1.0" encoding="iso8859-1" ?>
+<info version="3"><passenger_version>5.0.20</passenger_version><group_count>1</group_count><process_count>0</process_count><max>6</max><capacity_used>1</capacity_used><get_wait_list_size>0</get_wait_list_size><get_wait_list></get_wait_list><supergroups><supergroup><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><state>READY</state><get_wait_list_size>0</get_wait_list_size><capacity_used>1</capacity_used><secret>DdCLEsevKSeKZew5</secret><group default="true"><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><component_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</component_name><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_type>rack</app_type><environment>development</environment><uuid>ZHbeK7sey1cFsx45ZnmO</uuid><enabled_process_count>0</enabled_process_count><disabling_process_count>0</disabling_process_count><disabled_process_count>0</disabled_process_count><capacity_used>1</capacity_used><get_wait_list_size>1</get_wait_list_size><disable_wait_list_size>0</disable_wait_list_size><processes_being_spawned>1</processes_being_spawned><spawning/><secret>DdCLEsevKSeKZew5</secret><api_key>DdCLEsevKSeKZew5</api_key><life_status>ALIVE</life_status><user>celeritas365</user><uid>1000</uid><group>celeritas365</group><gid>1000</gid><options><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_group_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</app_group_name><app_type>rack</app_type><start_command>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby&#9;/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/rack-loader.rb</start_command><startup_file>/home/celeritas365/Documents/rails_workspace/umassemsapp/config.ru</startup_file><process_title>Passenger RubyApp</process_title><log_level>3</log_level><start_timeout>90000</start_timeout><environment>development</environment><base_uri>/</base_uri><spawn_method>smart</spawn_method><user>celeritas365</user><default_user>celeritas365</default_user><default_group>celeritas365</default_group><integration_mode>standalone</integration_mode><ruby>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby</ruby><python>python</python><nodejs>node</nodejs><ust_router_address>unix:/tmp/passenger.MX0qahV/agents.s/ust_router</ust_router_address><ust_router_username>logging</ust_router_username><ust_router_password>d3MonLPYB4bCthrxKdkBapTn</ust_router_password><debugger>false</debugger><analytics>false</analytics><api_key>DdCLEsevKSeKZew5</api_key><min_processes>1</min_processes><max_processes>0</max_processes><max_preloader_idle_time>300</max_preloader_idle_time><max_out_of_band_work_instances>1</max_out_of_band_work_instances></options><processes></processes></group></supergroup></supergroups></info>
+
+--------------------------------------
+[ pid=9711 ] Open files and file descriptors:
+COMMAND    PID         USER   FD   TYPE             DEVICE SIZE/OFF     NODE NAME
+Passenger 9711 celeritas365  cwd    DIR               0,26     4096 12190883 /home/celeritas365/Documents/rails_workspace/umassemsapp
+Passenger 9711 celeritas365  rtd    DIR                8,9     4096        2 /
+Passenger 9711 celeritas365  txt    REG               0,26 23832629   131375 /home/celeritas365/.passenger/support-binaries/5.0.20/PassengerAgent
+Passenger 9711 celeritas365  mem    REG                8,9    47712  5768158 /lib/x86_64-linux-gnu/libnss_files-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9    47760  5768222 /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9    39824  5768179 /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9  1840928  5768208 /lib/x86_64-linux-gnu/libc-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9    90080  5771325 /lib/x86_64-linux-gnu/libgcc_s.so.1
+Passenger 9711 celeritas365  mem    REG                8,9  1071552  5768157 /lib/x86_64-linux-gnu/libm-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9   979056  6555103 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+Passenger 9711 celeritas365  mem    REG                8,9   100728  5771462 /lib/x86_64-linux-gnu/libz.so.1.2.8
+Passenger 9711 celeritas365  mem    REG                8,9    14664  5768161 /lib/x86_64-linux-gnu/libdl-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9    97296  5768180 /lib/x86_64-linux-gnu/libnsl-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9   141574  5768209 /lib/x86_64-linux-gnu/libpthread-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9    31792  5768219 /lib/x86_64-linux-gnu/librt-2.19.so
+Passenger 9711 celeritas365  mem    REG                8,9   149120  5768184 /lib/x86_64-linux-gnu/ld-2.19.so
+Passenger 9711 celeritas365    0r   CHR                1,3      0t0     1029 /dev/null
+Passenger 9711 celeritas365    1w  FIFO                0,8      0t0   165757 pipe
+Passenger 9711 celeritas365    2w  FIFO                0,8      0t0   165757 pipe
+Passenger 9711 celeritas365    3u  unix 0x0000000000000000      0t0   168529 socket
+Passenger 9711 celeritas365    5w  FIFO                0,8      0t0   165757 pipe
+Passenger 9711 celeritas365    8r  FIFO                0,8      0t0   168563 pipe
+Passenger 9711 celeritas365    9w  FIFO                0,8      0t0   168563 pipe
+Passenger 9711 celeritas365   10r  FIFO                0,8      0t0   168564 pipe
+Passenger 9711 celeritas365   11w  FIFO                0,8      0t0   168564 pipe
+Passenger 9711 celeritas365   12r  FIFO                0,8      0t0   168565 pipe
+Passenger 9711 celeritas365   13w  FIFO                0,8      0t0   168565 pipe
+Passenger 9711 celeritas365   14u  unix 0x0000000000000000      0t0   168566 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9711 celeritas365   15u  unix 0x0000000000000000      0t0   168567 /tmp/passenger.MX0qahV/agents.s/core_api
+Passenger 9711 celeritas365   16r   CHR                1,9      0t0     1034 /dev/urandom
+Passenger 9711 celeritas365   17u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   18u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   19r  FIFO                0,8      0t0   168568 pipe
+Passenger 9711 celeritas365   20w  FIFO                0,8      0t0   168568 pipe
+Passenger 9711 celeritas365   21u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   22r  FIFO                0,8      0t0   168569 pipe
+Passenger 9711 celeritas365   23w  FIFO                0,8      0t0   168569 pipe
+Passenger 9711 celeritas365   24u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   25u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   26u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   27u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   28u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   29u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   30r  FIFO                0,8      0t0   168570 pipe
+Passenger 9711 celeritas365   31w  FIFO                0,8      0t0   168570 pipe
+Passenger 9711 celeritas365   32u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   33u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   34u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   35u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   36r  FIFO                0,8      0t0   168571 pipe
+Passenger 9711 celeritas365   37w  FIFO                0,8      0t0   168571 pipe
+Passenger 9711 celeritas365   38u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   39u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   40u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   41u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   42r  FIFO                0,8      0t0   168572 pipe
+Passenger 9711 celeritas365   43w  FIFO                0,8      0t0   168572 pipe
+Passenger 9711 celeritas365   44u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   45u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   46u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   47u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   48r  FIFO                0,8      0t0   168573 pipe
+Passenger 9711 celeritas365   49w  FIFO                0,8      0t0   168573 pipe
+Passenger 9711 celeritas365   50u  0000                0,9        0     7335 anon_inode
+Passenger 9711 celeritas365   51u  unix 0x0000000000000000      0t0   169391 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9711 celeritas365   53u  unix 0x0000000000000000      0t0   168581 socket
+Passenger 9711 celeritas365   54r  FIFO                0,8      0t0   168582 pipe
+--------------------------------------
+[ pid=9711 ] Dumping a more detailed backtrace with crash-watch...
+/usr/bin/env: bash: No such file or directory
+2015/10/14 17:30:46 [error] 9735#0: *4 upstream prematurely closed connection while reading response header from upstream, client: 70.215.17.190, server: _, request: "GET / HTTP/1.1", upstream: "passenger:unix:/tmp/passenger.MX0qahV/agents.s/core:", host: "24.62.204.109:3000"
+[ 2015-10-14 17:30:46.2300 9708/7ff642389700 age/Wat/AgentWatcher.cpp:96 ]: Passenger core (pid=9711) crashed with signal SIGABRT, restarting it...
+[ 2015-10-14 17:30:46.2327 9782/7fcaee596780 age/Cor/CoreMain.cpp:956 ]: Starting Passenger core...
+[ 2015-10-14 17:30:46.2328 9782/7fcaee596780 age/Cor/CoreMain.cpp:233 ]: Passenger core running in multi-application mode.
+[ 2015-10-14 17:30:46.2343 9782/7fcaee596780 age/Cor/CoreMain.cpp:706 ]: Passenger core online, PID 9782
+/usr/bin/env: bash: No such file or directory
+App 9800 stdout: 
+App 9800 stderr: /usr/bin/env: bash
+App 9800 stderr: : No such file or directory
+[ 2015-10-14 17:30:48.9466 9782/7fcaec2d5700 age/Cor/App/Implementation.cpp:303 ]: Could not spawn process for application /home/celeritas365/Documents/rails_workspace/umassemsapp: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 2b5529ec
+  Error details saved to: /tmp/passenger-error-hq0yjE.html
+  Message from application: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/usr/bin/env: bash: No such file or directory
+</pre>
+
+Cannot execute rm: No such file or directory
+terminate called after throwing an instance of 'Passenger::RuntimeException'
+  what():  Cannot remove directory '/tmp/passenger.spawn-debug.XXXXV2Sycp'
+[ pid=9782, timestamp=1444858248 ] Process aborted! signo=SIGABRT(6), reason=SI_TKILL, signal sent by PID 9782 with UID 1000, si_addr=0x3e800002636, randomSeed=1444858246
+[ pid=9782 ] Crash log dumped to /var/tmp/passenger-crash-log.1444858248
+[ pid=9782 ] Date, uname and ulimits:
+ERROR: Could not run 'date'!
+ERROR: Could not run 'uname -mprsv'!
+time(seconds)        unlimited
+file(blocks)         unlimited
+data(kbytes)         unlimited
+stack(kbytes)        8192
+coredump(blocks)     0
+memory(kbytes)       unlimited
+locked memory(kbytes) 64
+process              62211
+nofiles              1024
+vmemory(kbytes)      unlimited
+locks                unlimited
+[ pid=9782 ] Phusion Passenger version: 5.0.20
+[ pid=9782 ] libc backtrace available!
+--------------------------------------
+[ pid=9782 ] Backtrace with 28 frames:
+/usr/bin/env: bash: No such file or directory
+ERROR: cannot execute '/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby "/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/backtrace-sanitizer.rb"' for sanitizing the backtrace, writing to stderr directly...
+Passenger core[0x4937b0]
+Passenger core[0x492897]
+Passenger core[0x492d38]
+Passenger core[0x493661]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x10340)[0x7fcaedf88340]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x39)[0x7fcaecd92cc9]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x148)[0x7fcaecd960d8]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x155)[0x7fcaed69d535]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5e6d6)[0x7fcaed69b6d6]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5d799)[0x7fcaed69a799]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(__gxx_personality_v0+0x52a)[0x7fcaed69b34a]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(+0xfff3)[0x7fcaed130ff3]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(_Unwind_Resume+0x57)[0x7fcaed131517]
+Passenger core[0x50c1e4]
+Passenger core[0x45e461]
+Passenger core[0x591f43]
+Passenger core[0x593e27]
+Passenger core[0x5b107e]
+Passenger core[0x5b25b2]
+Passenger core[0x5bb7b7]
+Passenger core[0x5bb8a5]
+Passenger core[0x5cc800]
+Passenger core[0x5ba28d]
+Passenger core[0x64c97d]
+Passenger core[0x4b8fe0]
+Passenger core[0x649043]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8182)[0x7fcaedf80182]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x6d)[0x7fcaece5647d]
+--------------------------------------
+[ pid=9782 ] Dumping additional diagnostical information...
+--------------------------------------
+### Backtraces
+Thread 'Main thread' (0x7fcaee596780, LWP 9782):
+     in 'void waitForExitEvent()' (CoreMain.cpp:849)
+     in 'void mainLoop()' (CoreMain.cpp:742)
+     in 'int runCore()' (CoreMain.cpp:968)
+
+Thread 'Pool garbage collector' (0x7fcaee553700, LWP 9782):
+     in 'static void Passenger::ApplicationPool2::Pool::garbageCollect(Passenger::ApplicationPool2::PoolPtr)' (GarbageCollection.cpp:61)
+
+Thread 'Pool analytics collector' (0x7fcaee594700, LWP 9782):
+     in 'static void Passenger::ApplicationPool2::Pool::collectAnalytics(Passenger::ApplicationPool2::PoolPtr)' (AnalyticsCollection.cpp:51)
+
+Thread 'Thread #4' (0x7fcaecd5b700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 1' (0x7fcae7fff700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 1: libuv poller' (0x7fcaec55a700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 2: libuv poller' (0x7fcaec4d9700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 2' (0x7fcae77fe700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 3' (0x7fcae6ffd700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 3: libuv poller' (0x7fcaec458700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 4' (0x7fcae67fc700, LWP 9782):
+     (empty)
+
+Thread 'Main event loop: thread 4: libuv poller' (0x7fcaec3d7700, LWP 9782):
+     (empty)
+
+Thread 'API event loop' (0x7fcae5ffb700, LWP 9782):
+     (empty)
+
+Thread 'API event loop: libuv poller' (0x7fcaec356700, LWP 9782):
+     (empty)
+
+Thread 'Load balancer' (0x7fcae57fa700, LWP 9782):
+     (empty)
+
+Thread 'Group process spawner: /home/celeritas365/Documents/rails_workspace/umassemsapp/public (development)' (0x7fcaec2d5700, LWP 9787):
+     in 'void Passenger::SpawningKit::SmartSpawner::startPreloader()' (SmartSpawner.h:260)
+     in 'virtual Passenger::SpawningKit::Result Passenger::SpawningKit::SmartSpawner::spawn(const Passenger::SpawningKit::Options&)' (SmartSpawner.h:777)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const Passenger::SpawningKit::SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (SpawningAndRestarting.cpp:94)
+
+### Request handler state (thread 1)
+
+{
+	"active_client_count" : 1,
+	"active_clients" : 
+	{
+		"1-1" : 
+		{
+			"connected_at" : 
+			{
+				"local" : "Wed Oct 14 17:30:48 2015",
+				"relative" : "1s ago",
+				"timestamp" : 1444858248.877158
+			},
+			"connection_state" : "ACTIVE",
+			"current_request" : 
+			{
+				"app_sink_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"app_source_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"flags" : 
+				{
+					"dechunk_response" : true,
+					"https" : false,
+					"request_body_buffering" : false
+				},
+				"host" : "24.62.204.109:3000",
+				"http_major" : 1,
+				"http_minor" : 1,
+				"http_state" : "COMPLETE",
+				"method" : "GET",
+				"path" : "/",
+				"refcount" : 2,
+				"request_body_already_read" : 0,
+				"request_body_fully_read" : true,
+				"request_body_type" : "NO_BODY",
+				"response_begun" : false,
+				"session_checkout_try" : 0,
+				"started_at" : 
+				{
+					"local" : "Wed Oct 14 17:30:48 2015",
+					"relative" : "1s ago",
+					"timestamp" : 1444858248.877376
+				},
+				"state" : "CHECKING_OUT_SESSION",
+				"sticky_session" : false,
+				"want_keep_alive" : false
+			},
+			"lingering_request_count" : 0,
+			"name" : "1-1",
+			"number" : 1,
+			"output_channel_state" : 
+			{
+				"bytes_buffered" : 
+				{
+					"bytes" : 0,
+					"human_readable" : "0 bytes"
+				},
+				"callback_in_progress" : false,
+				"mode" : "IN_MEMORY_MODE",
+				"nbuffers" : 0,
+				"reader_state" : "RS_INACTIVE"
+			},
+			"refcount" : 2,
+			"requests_begun" : 1
+		}
+	},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 127,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 3,
+		"active_memory" : 
+		{
+			"bytes" : 1536,
+			"human_readable" : "1.5 KB"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9782,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 1285,
+	"total_clients_accepted" : 1,
+	"total_requests_begun" : 1,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 2)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9782,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 3)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9782,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 4)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9782,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler config (thread 1)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 2)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 3)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 4)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Pool state (simple)
+----------- General information -----------
+Max pool size : 6
+App groups    : 1
+Processes     : 0
+Requests in top-level queue : 0
+
+----------- Application groups -----------
+/home/celeritas365/Documents/rails_workspace/umassemsapp/public (development):
+  App root: /home/celeritas365/Documents/rails_workspace/umassemsapp
+  (spawning 1 new process...)
+  Requests in queue: 1
+
+
+### mbuf stats
+
+nfree_mbuf_blockq  : 0
+nactive_mbuf_blockq: 3
+mbuf_block_chunk_size: 512
+
+### Pool state (XML)
+<?xml version="1.0" encoding="iso8859-1" ?>
+<info version="3"><passenger_version>5.0.20</passenger_version><group_count>1</group_count><process_count>0</process_count><max>6</max><capacity_used>1</capacity_used><get_wait_list_size>0</get_wait_list_size><get_wait_list></get_wait_list><supergroups><supergroup><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><state>READY</state><get_wait_list_size>0</get_wait_list_size><capacity_used>1</capacity_used><secret>xgfL0rPbmOeXu831</secret><group default="true"><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><component_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</component_name><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_type>rack</app_type><environment>development</environment><uuid>t71wU6eKa0w5BKZazdMC</uuid><enabled_process_count>0</enabled_process_count><disabling_process_count>0</disabling_process_count><disabled_process_count>0</disabled_process_count><capacity_used>1</capacity_used><get_wait_list_size>1</get_wait_list_size><disable_wait_list_size>0</disable_wait_list_size><processes_being_spawned>1</processes_being_spawned><spawning/><secret>xgfL0rPbmOeXu831</secret><api_key>xgfL0rPbmOeXu831</api_key><life_status>ALIVE</life_status><user>celeritas365</user><uid>1000</uid><group>celeritas365</group><gid>1000</gid><options><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_group_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</app_group_name><app_type>rack</app_type><start_command>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby&#9;/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/rack-loader.rb</start_command><startup_file>/home/celeritas365/Documents/rails_workspace/umassemsapp/config.ru</startup_file><process_title>Passenger RubyApp</process_title><log_level>3</log_level><start_timeout>90000</start_timeout><environment>development</environment><base_uri>/</base_uri><spawn_method>smart</spawn_method><user>celeritas365</user><default_user>celeritas365</default_user><default_group>celeritas365</default_group><integration_mode>standalone</integration_mode><ruby>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby</ruby><python>python</python><nodejs>node</nodejs><ust_router_address>unix:/tmp/passenger.MX0qahV/agents.s/ust_router</ust_router_address><ust_router_username>logging</ust_router_username><ust_router_password>d3MonLPYB4bCthrxKdkBapTn</ust_router_password><debugger>false</debugger><analytics>false</analytics><api_key>xgfL0rPbmOeXu831</api_key><min_processes>1</min_processes><max_processes>0</max_processes><max_preloader_idle_time>300</max_preloader_idle_time><max_out_of_band_work_instances>1</max_out_of_band_work_instances></options><processes></processes></group></supergroup></supergroups></info>
+
+--------------------------------------
+[ pid=9782 ] Open files and file descriptors:
+COMMAND    PID         USER   FD   TYPE             DEVICE SIZE/OFF     NODE NAME
+Passenger 9782 celeritas365  cwd    DIR               0,26     4096 12190883 /home/celeritas365/Documents/rails_workspace/umassemsapp
+Passenger 9782 celeritas365  rtd    DIR                8,9     4096        2 /
+Passenger 9782 celeritas365  txt    REG               0,26 23832629   131375 /home/celeritas365/.passenger/support-binaries/5.0.20/PassengerAgent
+Passenger 9782 celeritas365  mem    REG                8,9    47712  5768158 /lib/x86_64-linux-gnu/libnss_files-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9    47760  5768222 /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9    39824  5768179 /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9  1840928  5768208 /lib/x86_64-linux-gnu/libc-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9    90080  5771325 /lib/x86_64-linux-gnu/libgcc_s.so.1
+Passenger 9782 celeritas365  mem    REG                8,9  1071552  5768157 /lib/x86_64-linux-gnu/libm-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9   979056  6555103 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+Passenger 9782 celeritas365  mem    REG                8,9   100728  5771462 /lib/x86_64-linux-gnu/libz.so.1.2.8
+Passenger 9782 celeritas365  mem    REG                8,9    14664  5768161 /lib/x86_64-linux-gnu/libdl-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9    97296  5768180 /lib/x86_64-linux-gnu/libnsl-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9   141574  5768209 /lib/x86_64-linux-gnu/libpthread-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9    31792  5768219 /lib/x86_64-linux-gnu/librt-2.19.so
+Passenger 9782 celeritas365  mem    REG                8,9   149120  5768184 /lib/x86_64-linux-gnu/ld-2.19.so
+Passenger 9782 celeritas365    0r   CHR                1,3      0t0     1029 /dev/null
+Passenger 9782 celeritas365    1w  FIFO                0,8      0t0   171059 pipe
+Passenger 9782 celeritas365    2w  FIFO                0,8      0t0   171059 pipe
+Passenger 9782 celeritas365    3u  unix 0x0000000000000000      0t0   167634 socket
+Passenger 9782 celeritas365    5w  FIFO                0,8      0t0   171059 pipe
+Passenger 9782 celeritas365    8r  FIFO                0,8      0t0   169501 pipe
+Passenger 9782 celeritas365    9w  FIFO                0,8      0t0   169501 pipe
+Passenger 9782 celeritas365   10r  FIFO                0,8      0t0   169502 pipe
+Passenger 9782 celeritas365   11w  FIFO                0,8      0t0   169502 pipe
+Passenger 9782 celeritas365   12r  FIFO                0,8      0t0   169503 pipe
+Passenger 9782 celeritas365   13w  FIFO                0,8      0t0   169503 pipe
+Passenger 9782 celeritas365   14u  unix 0x0000000000000000      0t0   169504 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9782 celeritas365   15u  unix 0x0000000000000000      0t0   169505 /tmp/passenger.MX0qahV/agents.s/core_api
+Passenger 9782 celeritas365   16r   CHR                1,9      0t0     1034 /dev/urandom
+Passenger 9782 celeritas365   17u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   18u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   19r  FIFO                0,8      0t0   169506 pipe
+Passenger 9782 celeritas365   20w  FIFO                0,8      0t0   169506 pipe
+Passenger 9782 celeritas365   21u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   22r  FIFO                0,8      0t0   169507 pipe
+Passenger 9782 celeritas365   23w  FIFO                0,8      0t0   169507 pipe
+Passenger 9782 celeritas365   24u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   25u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   26u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   27u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   28u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   29u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   30r  FIFO                0,8      0t0   169508 pipe
+Passenger 9782 celeritas365   31w  FIFO                0,8      0t0   169508 pipe
+Passenger 9782 celeritas365   32u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   33u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   34u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   35u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   36r  FIFO                0,8      0t0   169509 pipe
+Passenger 9782 celeritas365   37w  FIFO                0,8      0t0   169509 pipe
+Passenger 9782 celeritas365   38u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   39u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   40u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   41u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   42r  FIFO                0,8      0t0   169510 pipe
+Passenger 9782 celeritas365   43w  FIFO                0,8      0t0   169510 pipe
+Passenger 9782 celeritas365   44u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   45u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   46u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   47u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   48r  FIFO                0,8      0t0   169511 pipe
+Passenger 9782 celeritas365   49w  FIFO                0,8      0t0   169511 pipe
+Passenger 9782 celeritas365   50u  0000                0,9        0     7335 anon_inode
+Passenger 9782 celeritas365   51u  unix 0x0000000000000000      0t0   167649 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9782 celeritas365   53u  unix 0x0000000000000000      0t0   169518 socket
+Passenger 9782 celeritas365   54r  FIFO                0,8      0t0   169519 pipe
+--------------------------------------
+[ pid=9782 ] Dumping a more detailed backtrace with crash-watch...
+/usr/bin/env: bash: No such file or directory
+2015/10/14 17:30:49 [error] 9735#0: *4 upstream prematurely closed connection while reading response header from upstream, client: 70.215.17.190, server: _, request: "GET / HTTP/1.1", upstream: "passenger:unix:/tmp/passenger.MX0qahV/agents.s/core:", host: "24.62.204.109:3000"
+[ 2015-10-14 17:30:49.0866 9708/7ff642389700 age/Wat/AgentWatcher.cpp:96 ]: Passenger core (pid=9782) crashed with signal SIGABRT, restarting it...
+[ 2015-10-14 17:30:49.0914 9828/7fe9fa347780 age/Cor/CoreMain.cpp:956 ]: Starting Passenger core...
+[ 2015-10-14 17:30:49.0916 9828/7fe9fa347780 age/Cor/CoreMain.cpp:233 ]: Passenger core running in multi-application mode.
+[ 2015-10-14 17:30:49.0939 9828/7fe9fa347780 age/Cor/CoreMain.cpp:706 ]: Passenger core online, PID 9828
+/usr/bin/env: bash: No such file or directory
+App 9848 stdout: 
+App 9848 stderr: /usr/bin/env: bash
+App 9848 stderr: : No such file or directory
+[ 2015-10-14 17:31:21.8895 9828/7fe9f8086700 age/Cor/App/Implementation.cpp:303 ]: Could not spawn process for application /home/celeritas365/Documents/rails_workspace/umassemsapp: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 022bdbe6
+  Error details saved to: /tmp/passenger-error-u3FbMC.html
+  Message from application: An error occurred while starting up the preloader. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/usr/bin/env: bash: No such file or directory
+</pre>
+
+Cannot execute rm: No such file or directory
+terminate called after throwing an instance of 'Passenger::RuntimeException'
+  what():  Cannot remove directory '/tmp/passenger.spawn-debug.XXXXeMQ2nS'
+[ pid=9828, timestamp=1444858281 ] Process aborted! signo=SIGABRT(6), reason=SI_TKILL, signal sent by PID 9828 with UID 1000, si_addr=0x3e800002664, randomSeed=1444858249
+[ pid=9828 ] Crash log dumped to /var/tmp/passenger-crash-log.1444858281
+[ pid=9828 ] Date, uname and ulimits:
+ERROR: Could not run 'date'!
+ERROR: Could not run 'uname -mprsv'!
+time(seconds)        unlimited
+file(blocks)         unlimited
+data(kbytes)         unlimited
+stack(kbytes)        8192
+coredump(blocks)     0
+memory(kbytes)       unlimited
+locked memory(kbytes) 64
+process              62211
+nofiles              1024
+vmemory(kbytes)      unlimited
+locks                unlimited
+[ pid=9828 ] Phusion Passenger version: 5.0.20
+[ pid=9828 ] libc backtrace available!
+--------------------------------------
+[ pid=9828 ] Backtrace with 28 frames:
+/usr/bin/env: bash: No such file or directory
+ERROR: cannot execute '/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby "/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/backtrace-sanitizer.rb"' for sanitizing the backtrace, writing to stderr directly...
+Passenger core[0x4937b0]
+Passenger core[0x492897]
+Passenger core[0x492d38]
+Passenger core[0x493661]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x10340)[0x7fe9f9d39340]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0x39)[0x7fe9f8b43cc9]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x148)[0x7fe9f8b470d8]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(_ZN9__gnu_cxx27__verbose_terminate_handlerEv+0x155)[0x7fe9f944e535]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5e6d6)[0x7fe9f944c6d6]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(+0x5d799)[0x7fe9f944b799]
+/usr/lib/x86_64-linux-gnu/libstdc++.so.6(__gxx_personality_v0+0x52a)[0x7fe9f944c34a]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(+0xfff3)[0x7fe9f8ee1ff3]
+/lib/x86_64-linux-gnu/libgcc_s.so.1(_Unwind_Resume+0x57)[0x7fe9f8ee2517]
+Passenger core[0x50c1e4]
+Passenger core[0x45e461]
+Passenger core[0x591f43]
+Passenger core[0x593e27]
+Passenger core[0x5b107e]
+Passenger core[0x5b25b2]
+Passenger core[0x5bb7b7]
+Passenger core[0x5bb8a5]
+Passenger core[0x5cc800]
+Passenger core[0x5ba28d]
+Passenger core[0x64c97d]
+Passenger core[0x4b8fe0]
+Passenger core[0x649043]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x8182)[0x7fe9f9d31182]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x6d)[0x7fe9f8c0747d]
+--------------------------------------
+[ pid=9828 ] Dumping additional diagnostical information...
+--------------------------------------
+### Backtraces
+Thread 'Main thread' (0x7fe9fa347780, LWP 9828):
+     in 'void waitForExitEvent()' (CoreMain.cpp:849)
+     in 'void mainLoop()' (CoreMain.cpp:742)
+     in 'int runCore()' (CoreMain.cpp:968)
+
+Thread 'Pool garbage collector' (0x7fe9fa304700, LWP 9828):
+     in 'static void Passenger::ApplicationPool2::Pool::garbageCollect(Passenger::ApplicationPool2::PoolPtr)' (GarbageCollection.cpp:61)
+
+Thread 'Pool analytics collector' (0x7fe9fa345700, LWP 9828):
+     in 'static void Passenger::ApplicationPool2::Pool::collectAnalytics(Passenger::ApplicationPool2::PoolPtr)' (AnalyticsCollection.cpp:65)
+
+Thread 'Main event loop: thread 1' (0x7fe9f3fff700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 1: libuv poller' (0x7fe9f830b700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 2' (0x7fe9f37fe700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 2: libuv poller' (0x7fe9f828a700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 3' (0x7fe9f2ffd700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 3: libuv poller' (0x7fe9f8209700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 4' (0x7fe9f27fc700, LWP 9828):
+     (empty)
+
+Thread 'Main event loop: thread 4: libuv poller' (0x7fe9f8188700, LWP 9828):
+     (empty)
+
+Thread 'API event loop' (0x7fe9f1ffb700, LWP 9828):
+     (empty)
+
+Thread 'API event loop: libuv poller' (0x7fe9f8107700, LWP 9828):
+     (empty)
+
+Thread 'Load balancer' (0x7fe9f17fa700, LWP 9828):
+     (empty)
+
+Thread 'Group process spawner: /home/celeritas365/Documents/rails_workspace/umassemsapp/public (development)' (0x7fe9f8086700, LWP 9833):
+     in 'void Passenger::SpawningKit::SmartSpawner::startPreloader()' (SmartSpawner.h:260)
+     in 'virtual Passenger::SpawningKit::Result Passenger::SpawningKit::SmartSpawner::spawn(const Passenger::SpawningKit::Options&)' (SmartSpawner.h:777)
+     in 'void Passenger::ApplicationPool2::Group::spawnThreadRealMain(const Passenger::SpawningKit::SpawnerPtr&, const Passenger::ApplicationPool2::Options&, unsigned int)' (SpawningAndRestarting.cpp:94)
+
+### Request handler state (thread 1)
+
+{
+	"active_client_count" : 1,
+	"active_clients" : 
+	{
+		"1-1" : 
+		{
+			"connected_at" : 
+			{
+				"local" : "Wed Oct 14 17:31:21 2015",
+				"relative" : "1s ago",
+				"timestamp" : 1444858281.825451
+			},
+			"connection_state" : "ACTIVE",
+			"current_request" : 
+			{
+				"app_sink_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"app_source_state" : 
+				{
+					"callback_in_progress" : true,
+					"end_acked" : true,
+					"ended" : true,
+					"initialized" : false,
+					"io_watcher_active" : false
+				},
+				"flags" : 
+				{
+					"dechunk_response" : true,
+					"https" : false,
+					"request_body_buffering" : false
+				},
+				"host" : "24.62.204.109:3000",
+				"http_major" : 1,
+				"http_minor" : 1,
+				"http_state" : "COMPLETE",
+				"method" : "GET",
+				"path" : "/",
+				"refcount" : 2,
+				"request_body_already_read" : 0,
+				"request_body_fully_read" : true,
+				"request_body_type" : "NO_BODY",
+				"response_begun" : false,
+				"session_checkout_try" : 0,
+				"started_at" : 
+				{
+					"local" : "Wed Oct 14 17:31:21 2015",
+					"relative" : "1s ago",
+					"timestamp" : 1444858281.825534
+				},
+				"state" : "CHECKING_OUT_SESSION",
+				"sticky_session" : false,
+				"want_keep_alive" : false
+			},
+			"lingering_request_count" : 0,
+			"name" : "1-1",
+			"number" : 1,
+			"output_channel_state" : 
+			{
+				"bytes_buffered" : 
+				{
+					"bytes" : 0,
+					"human_readable" : "0 bytes"
+				},
+				"callback_in_progress" : false,
+				"mode" : "IN_MEMORY_MODE",
+				"nbuffers" : 0,
+				"reader_state" : "RS_INACTIVE"
+			},
+			"refcount" : 2,
+			"requests_begun" : 1
+		}
+	},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 127,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 3,
+		"active_memory" : 
+		{
+			"bytes" : 1536,
+			"human_readable" : "1.5 KB"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9828,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 1285,
+	"total_clients_accepted" : 1,
+	"total_requests_begun" : 1,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 2)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9828,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 3)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9828,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler state (thread 4)
+
+{
+	"active_client_count" : 0,
+	"active_clients" : {},
+	"disconnected_client_count" : 0,
+	"disconnected_clients" : {},
+	"free_client_count" : 128,
+	"free_request_count" : 0,
+	"mbuf_pool" : 
+	{
+		"active_blocks" : 0,
+		"active_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		},
+		"chunk_size" : 512,
+		"free_blocks" : 0,
+		"offset" : 464,
+		"spare_memory" : 
+		{
+			"bytes" : 0,
+			"human_readable" : "0 bytes"
+		}
+	},
+	"pid" : 9828,
+	"server_state" : "ACTIVE",
+	"total_bytes_consumed" : 0,
+	"total_clients_accepted" : 0,
+	"total_requests_begun" : 0,
+	"turbocaching" : 
+	{
+		"fetches" : 0,
+		"hit_ratio" : null,
+		"hits" : 0,
+		"store_success_ratio" : null,
+		"store_successes" : 0,
+		"stores" : 0
+	}
+}
+
+### Request handler config (thread 1)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 2)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 3)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Request handler config (thread 4)
+
+{
+	"accept_burst_count" : 32,
+	"client_freelist_limit" : 1024,
+	"data_buffer_dir" : "/tmp",
+	"min_spare_clients" : 128,
+	"request_freelist_limit" : 1024,
+	"show_version_in_header" : true,
+	"single_app_mode" : false,
+	"start_reading_after_accept" : true,
+	"stat_throttle_rate" : 10
+}
+
+### Pool state (simple)
+----------- General information -----------
+Max pool size : 6
+App groups    : 1
+Processes     : 0
+Requests in top-level queue : 0
+
+----------- Application groups -----------
+/home/celeritas365/Documents/rails_workspace/umassemsapp/public (development):
+  App root: /home/celeritas365/Documents/rails_workspace/umassemsapp
+  (spawning 1 new process...)
+  Requests in queue: 1
+
+
+### mbuf stats
+
+nfree_mbuf_blockq  : 0
+nactive_mbuf_blockq: 3
+mbuf_block_chunk_size: 512
+
+### Pool state (XML)
+<?xml version="1.0" encoding="iso8859-1" ?>
+<info version="3"><passenger_version>5.0.20</passenger_version><group_count>1</group_count><process_count>0</process_count><max>6</max><capacity_used>1</capacity_used><get_wait_list_size>0</get_wait_list_size><get_wait_list></get_wait_list><supergroups><supergroup><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><state>READY</state><get_wait_list_size>0</get_wait_list_size><capacity_used>1</capacity_used><secret>Bf5gbnLuO1Ad20s7</secret><group default="true"><name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</name><component_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</component_name><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_type>rack</app_type><environment>development</environment><uuid>RNvot8EGNF2krcf8lkvK</uuid><enabled_process_count>0</enabled_process_count><disabling_process_count>0</disabling_process_count><disabled_process_count>0</disabled_process_count><capacity_used>1</capacity_used><get_wait_list_size>1</get_wait_list_size><disable_wait_list_size>0</disable_wait_list_size><processes_being_spawned>1</processes_being_spawned><spawning/><secret>Bf5gbnLuO1Ad20s7</secret><api_key>Bf5gbnLuO1Ad20s7</api_key><life_status>ALIVE</life_status><user>celeritas365</user><uid>1000</uid><group>celeritas365</group><gid>1000</gid><options><app_root>/home/celeritas365/Documents/rails_workspace/umassemsapp</app_root><app_group_name>/home/celeritas365/Documents/rails_workspace/umassemsapp/public &#40;development&#41;</app_group_name><app_type>rack</app_type><start_command>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby&#9;/home/celeritas365/.rvm/gems/ruby-2.2.1/gems/passenger-5.0.20/src/helper-scripts/rack-loader.rb</start_command><startup_file>/home/celeritas365/Documents/rails_workspace/umassemsapp/config.ru</startup_file><process_title>Passenger RubyApp</process_title><log_level>3</log_level><start_timeout>90000</start_timeout><environment>development</environment><base_uri>/</base_uri><spawn_method>smart</spawn_method><user>celeritas365</user><default_user>celeritas365</default_user><default_group>celeritas365</default_group><integration_mode>standalone</integration_mode><ruby>/home/celeritas365/.rvm/gems/ruby-2.2.1/wrappers/ruby</ruby><python>python</python><nodejs>node</nodejs><ust_router_address>unix:/tmp/passenger.MX0qahV/agents.s/ust_router</ust_router_address><ust_router_username>logging</ust_router_username><ust_router_password>d3MonLPYB4bCthrxKdkBapTn</ust_router_password><debugger>false</debugger><analytics>false</analytics><api_key>Bf5gbnLuO1Ad20s7</api_key><min_processes>1</min_processes><max_processes>0</max_processes><max_preloader_idle_time>300</max_preloader_idle_time><max_out_of_band_work_instances>1</max_out_of_band_work_instances></options><processes></processes></group></supergroup></supergroups></info>
+
+--------------------------------------
+[ pid=9828 ] Open files and file descriptors:
+COMMAND    PID         USER   FD   TYPE             DEVICE SIZE/OFF     NODE NAME
+Passenger 9828 celeritas365  cwd    DIR               0,26     4096 12190883 /home/celeritas365/Documents/rails_workspace/umassemsapp
+Passenger 9828 celeritas365  rtd    DIR                8,9     4096        2 /
+Passenger 9828 celeritas365  txt    REG               0,26 23832629   131375 /home/celeritas365/.passenger/support-binaries/5.0.20/PassengerAgent
+Passenger 9828 celeritas365  mem    REG                8,9    47712  5768158 /lib/x86_64-linux-gnu/libnss_files-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9    47760  5768222 /lib/x86_64-linux-gnu/libnss_nis-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9    39824  5768179 /lib/x86_64-linux-gnu/libnss_compat-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9  1840928  5768208 /lib/x86_64-linux-gnu/libc-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9    90080  5771325 /lib/x86_64-linux-gnu/libgcc_s.so.1
+Passenger 9828 celeritas365  mem    REG                8,9  1071552  5768157 /lib/x86_64-linux-gnu/libm-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9   979056  6555103 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+Passenger 9828 celeritas365  mem    REG                8,9   100728  5771462 /lib/x86_64-linux-gnu/libz.so.1.2.8
+Passenger 9828 celeritas365  mem    REG                8,9    14664  5768161 /lib/x86_64-linux-gnu/libdl-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9    97296  5768180 /lib/x86_64-linux-gnu/libnsl-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9   141574  5768209 /lib/x86_64-linux-gnu/libpthread-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9    31792  5768219 /lib/x86_64-linux-gnu/librt-2.19.so
+Passenger 9828 celeritas365  mem    REG                8,9   149120  5768184 /lib/x86_64-linux-gnu/ld-2.19.so
+Passenger 9828 celeritas365    0r   CHR                1,3      0t0     1029 /dev/null
+Passenger 9828 celeritas365    1w  FIFO                0,8      0t0   171083 pipe
+Passenger 9828 celeritas365    2w  FIFO                0,8      0t0   171083 pipe
+Passenger 9828 celeritas365    3u  unix 0x0000000000000000      0t0   171061 socket
+Passenger 9828 celeritas365    5w  FIFO                0,8      0t0   171083 pipe
+Passenger 9828 celeritas365    8r  FIFO                0,8      0t0   169920 pipe
+Passenger 9828 celeritas365    9w  FIFO                0,8      0t0   169920 pipe
+Passenger 9828 celeritas365   10r  FIFO                0,8      0t0   169921 pipe
+Passenger 9828 celeritas365   11w  FIFO                0,8      0t0   169921 pipe
+Passenger 9828 celeritas365   12r  FIFO                0,8      0t0   169922 pipe
+Passenger 9828 celeritas365   13w  FIFO                0,8      0t0   169922 pipe
+Passenger 9828 celeritas365   14u  unix 0x0000000000000000      0t0   169923 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9828 celeritas365   15u  unix 0x0000000000000000      0t0   169924 /tmp/passenger.MX0qahV/agents.s/core_api
+Passenger 9828 celeritas365   16r   CHR                1,9      0t0     1034 /dev/urandom
+Passenger 9828 celeritas365   17u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   18u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   19r  FIFO                0,8      0t0   167713 pipe
+Passenger 9828 celeritas365   20w  FIFO                0,8      0t0   167713 pipe
+Passenger 9828 celeritas365   21u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   22r  FIFO                0,8      0t0   167714 pipe
+Passenger 9828 celeritas365   23w  FIFO                0,8      0t0   167714 pipe
+Passenger 9828 celeritas365   24u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   25u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   26u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   27u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   28u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   29u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   30r  FIFO                0,8      0t0   167715 pipe
+Passenger 9828 celeritas365   31w  FIFO                0,8      0t0   167715 pipe
+Passenger 9828 celeritas365   32u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   33u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   34u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   35u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   36r  FIFO                0,8      0t0   167716 pipe
+Passenger 9828 celeritas365   37w  FIFO                0,8      0t0   167716 pipe
+Passenger 9828 celeritas365   38u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   39u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   40u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   41u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   42r  FIFO                0,8      0t0   167717 pipe
+Passenger 9828 celeritas365   43w  FIFO                0,8      0t0   167717 pipe
+Passenger 9828 celeritas365   44u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   45u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   46u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   47u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   48r  FIFO                0,8      0t0   167718 pipe
+Passenger 9828 celeritas365   49w  FIFO                0,8      0t0   167718 pipe
+Passenger 9828 celeritas365   50u  0000                0,9        0     7335 anon_inode
+Passenger 9828 celeritas365   51u  unix 0x0000000000000000      0t0   170306 /tmp/passenger.MX0qahV/agents.s/core
+Passenger 9828 celeritas365   53u  unix 0x0000000000000000      0t0   169977 socket
+Passenger 9828 celeritas365   54r  FIFO                0,8      0t0   169978 pipe
+--------------------------------------
+[ pid=9828 ] Dumping a more detailed backtrace with crash-watch...
+/usr/bin/env: bash: No such file or directory
+[ 2015-10-14 17:31:22.0377 9708/7ff642389700 age/Wat/AgentWatcher.cpp:96 ]: Passenger core (pid=9828) crashed with signal SIGABRT, restarting it...
+2015/10/14 17:31:22 [error] 9735#0: *4 upstream prematurely closed connection while reading response header from upstream, client: 70.215.17.190, server: _, request: "GET / HTTP/1.1", upstream: "passenger:unix:/tmp/passenger.MX0qahV/agents.s/core:", host: "24.62.204.109:3000"
+[ 2015-10-14 17:31:22.0406 9876/7f33486e1780 age/Cor/CoreMain.cpp:956 ]: Starting Passenger core...
+[ 2015-10-14 17:31:22.0407 9876/7f33486e1780 age/Cor/CoreMain.cpp:233 ]: Passenger core running in multi-application mode.
+[ 2015-10-14 17:31:22.0423 9876/7f33486e1780 age/Cor/CoreMain.cpp:706 ]: Passenger core online, PID 9876
+/usr/bin/env: bash: No such file or directory
+
+[ 2015-10-14 17:31:24.6517 9718/7f2710e83700 age/Ust/UstRouterMain.cpp:396 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-10-14 17:31:24.6519 9718/7f2712ce0780 age/Ust/UstRouterMain.cpp:466 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+
+[ 2015-10-14 17:31:24.6520 9876/7f33466a5700 age/Cor/CoreMain.cpp:506 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2015-10-14 17:31:24.6520 9718/7f2710e83700 Ser/Server.h:443 ]: [UstRouter] Shutdown finished
+[ 2015-10-14 17:31:24.6520 9718/7f2703fff700 Ser/Server.h:758 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2015-10-14 17:31:24.6521 9876/7f33486e1780 age/Cor/CoreMain.cpp:875 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2015-10-14 17:31:24.6522 9718/7f2703fff700 Ser/Server.h:443 ]: [UstRouterApiServer] Shutdown finished
+[ 2015-10-14 17:31:24.6530 9876/7f3345e23700 Ser/Server.h:758 ]: [ServerThr.2] Freed 128 spare client objects
+[ 2015-10-14 17:31:24.6531 9876/7f3345e23700 Ser/Server.h:443 ]: [ServerThr.2] Shutdown finished
+[ 2015-10-14 17:31:24.6532 9876/7f3344d1f700 Ser/Server.h:758 ]: [ServerThr.4] Freed 128 spare client objects
+[ 2015-10-14 17:31:24.6532 9876/7f33455a1700 Ser/Server.h:758 ]: [ServerThr.3] Freed 128 spare client objects
+[ 2015-10-14 17:31:24.6532 9876/7f3344d1f700 Ser/Server.h:443 ]: [ServerThr.4] Shutdown finished
+[ 2015-10-14 17:31:24.6533 9876/7f33455a1700 Ser/Server.h:443 ]: [ServerThr.3] Shutdown finished
+[ 2015-10-14 17:31:24.6534 9876/7f333ffff700 Ser/Server.h:758 ]: [ApiServer] Freed 0 spare client objects
+[ 2015-10-14 17:31:24.6535 9876/7f333ffff700 Ser/Server.h:443 ]: [ApiServer] Shutdown finished
+[ 2015-10-14 17:31:24.6536 9718/7f2712ce0780 age/Ust/UstRouterMain.cpp:497 ]: Passenger UstRouter shutdown finished
+[ 2015-10-14 17:31:24.6536 9876/7f33466a5700 Ser/Server.h:758 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2015-10-14 17:31:24.6537 9876/7f33466a5700 Ser/Server.h:443 ]: [ServerThr.1] Shutdown finished
+[ 2015-10-14 17:31:24.6665 9876/7f33486e1780 age/Cor/CoreMain.cpp:941 ]: Passenger core shutdown finished
+Cannot execute rm: No such file or directory
+[ 2015-10-14 17:31:24.6921 9894/7ff6423cc780 age/Wat/WatchdogMain.cpp:466 ]: An exception occurred during cleaning up: Cannot remove directory '/tmp/passenger.MX0qahV'
+/bin/sh: 1: /bin/sh: rm: not found
+*** TempDirToucher error: shell command 'rm -rf /tmp/passenger-standalone.6uyr1k' failed with exit status 127

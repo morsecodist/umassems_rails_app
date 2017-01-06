@@ -1,0 +1,22 @@
+I"é(function() {
+  var boxtoggler;
+
+  boxtoggler = function(event) {
+    if (event.target.nodeName !== 'SPAN' && event.target.nodeName !== 'INPUT') {
+      $(this).children('div.hidden').toggle();
+    }
+    return $('span').val(event.target.nodeName);
+  };
+
+  $(function() {
+    $('.hidden').hide();
+    $('#clear').hide();
+    return $('input').click(function() {
+      return $('#notice').fadeOut(500);
+    });
+  });
+
+  $(document).on('click', '.triple_state', boxtoggler);
+
+}).call(this);
+:ET

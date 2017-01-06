@@ -1,0 +1,10 @@
+<div>
+    <h3><%= getrole(staffer.role) %></h3>
+    <%= image_tag(staffer.photo.url(:standardized,timestamp: false)) %>
+    <h4><%= staffer.first + " " + staffer.last %></h4>
+    <h4>Office Hours:</h4>
+    <p class="bold"><%= office_hours_bandaid(staffer.role)[0] %></p>
+    <p class="bold"><%= office_hours_bandaid(staffer.role)[1] %></p>
+    <p><a href=<%="mailto:" + staffer.email %>><%=staffer.email %></a></p>
+    <%= staffer.bio %>
+</div>

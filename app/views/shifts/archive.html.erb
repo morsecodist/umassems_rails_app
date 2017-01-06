@@ -1,0 +1,6 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <% @shifts.each do |shift| %>
+        <%= render 'users/user_shift', :user_shift => shift %>
+    <% end %>
+</div>

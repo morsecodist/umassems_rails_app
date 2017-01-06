@@ -1,0 +1,13 @@
+header#mobile_header {
+    background-color: $umassems_navy;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+div#mobile_header > span {
+    font-size: 36px;
+}

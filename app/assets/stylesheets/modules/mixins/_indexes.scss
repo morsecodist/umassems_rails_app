@@ -1,0 +1,72 @@
+/* This is styling for index boxes used throughout the site */
+@mixin index-box ($color: $off_white) {
+    
+    box-shadow: 2px 2px 3px $shadow_grey;
+    @include selectable($color, true);
+    margin: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    
+    &:not(.small) {
+        min-width: 700px;
+    }
+    
+    & span {
+        cursor: auto;
+    }
+    
+    & div.visible {
+        margin: 0px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-content: center;
+    }
+    & div.visible div {
+        flex-grow: 1;
+        flex-shrink: 0;
+        padding: 10px;
+        margin: 0px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    &:not(.small) div.visible div:not(.xholder) {
+        width:11%;
+    }
+    
+    & div.visible div p {
+        margin: 5px;
+    }
+    
+    & div.xholder {
+        flex-shrink: 0;
+        max-width:25px;
+        flex-grow: 0;
+    }
+    
+    & div.xholder > a {
+        flex: 0 0 auto;
+        padding: 0px;
+        height: 25px;
+    }
+    
+    & div.visible img {
+        width: 25px;
+        height: auto;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    & div.hidden:not(.certificate) {
+        text-align: left;
+        padding: 10px;
+    }
+    
+    & input {
+        font-size: 20px;
+    }
+}

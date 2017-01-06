@@ -1,0 +1,116 @@
+/* These stylings are for the site header */
+
+/* Thes stylings apply to the entire header */
+div#header {
+	position: fixed;
+    background-color: $umassems_navy;
+	border-bottom: 7px solid $umass_maroon;
+    top: 0px;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0px;
+    min-width: 1550px;
+}
+
+div#header a:link, div#header a:visited, div#header a:active, div#header a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+div#header h1 {
+	color: white;
+	position: relative;
+	text-align: center;
+	margin-top: 10px;
+	padding-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Center of the header */
+
+div.head-center {
+    flex: 1 0 auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+    /* Navbar */
+
+    div#navbar {
+        position: relative;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    div#navbar > div {
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: none;
+        border-top-left-radius: 2px;
+        border-top-right-racontainerdius: 2px;
+        padding: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    div#navbar div:hover {
+        background-color: $umass_maroon;
+    }
+
+    div#navbar div.selected-nav {
+        background-color: $umass_maroon;
+    }
+
+/* Ends of the header */
+
+div.bookend {
+    flex: 1 1 300px;
+    min-width: 100px;
+    display: flex;
+    text-align: right;
+    color: lighten($umass_maroon,10);
+    background-color: $umassems_navy;
+}
+
+    /* Left Side */
+
+    div.bookend.left {
+        min-width: 325px;
+        flex-shrink: 1;
+    }
+
+    div.bookend img {
+        flex-shrink: 0;
+        height: 35px;
+        padding: 5px;
+        align-self: center;
+    }
+
+    div.bookend img#logo {
+        height: 70px;
+        width: 70px;
+        min-width: 70px;
+    }
+
+    /* Right Side */
+
+    div.bookend.right {
+        flex-direction: row-reverse;
+        min-width: 175px;
+    }
+
+    div.bookend.right a {
+        padding: 5px;
+    }
+
+    div.bookend.right p {
+        padding-right: 40px;
+        align-self: center;
+        font-size: 18px;
+        font-family: OpenSans;
+        font-weight: bold;
+    }

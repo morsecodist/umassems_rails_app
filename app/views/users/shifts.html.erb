@@ -1,0 +1,7 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <h1>Shift Board</h1>
+    <% @weeks.each do |week| %>
+        <%= render 'week.html.erb', :week => week %>
+    <% end %>
+</div>

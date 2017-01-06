@@ -1,0 +1,18 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+<h1>Settings for <%= @user.first %></h1>
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+  <h2>Change Password</h2>
+  <%= form_tag update_password_path(@user), :method => "patch" do %>
+    <p>Old Password</p>
+      <%= password_field_tag :old_password %>
+    <p>New Password</p>
+      <%= password_field_tag :password %>
+    <p>Repeat New Password</p>
+      <%= password_field_tag :password_confirmation %></br>
+    <%= submit_tag "Change Password" %>
+  <% end %>
+</div>

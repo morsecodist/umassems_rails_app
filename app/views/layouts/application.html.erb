@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Umass EMS</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'mobile', media: 'all', 'data-turbolinks-track' => true if mobile_device? %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+    <%= favicon_link_tag(source="umassemslogo_navy.png") %>
+</head>
+<body>
+
+<div id="header">
+    <div class="bookend left">
+        <%=image_tag "umassemslogo.png", :id => "logo" %>
+        <%=image_tag "umassemswriting.png" %>
+    </div>
+    <div class="head-center">
+        <h1><%= link_to "University of Massachusetts Emergency Medical Services", '/' %></h1>
+        <div id="navbar">
+            <div class="<%= 'selected-nav' if current_page.include? '/member_portal' %>"><%= link_to "Member Portal", '/member_portal/login' %></div>
+            <div class="<%= 'selected-nav' if current_page == '/staff' %>"><%= link_to "Staff", '/staff' %></div>
+            <div class="<%= 'selected-nav' if current_page == '/about' %>"><%= link_to "About Us", '/about' %></div>
+            <div class="<%= 'selected-nav' if current_page.include? '/join_info' %>"><%= link_to "Join", '/join_info' %></div>
+            <!--<div class="<%= 'selected-nav' if current_page == '/class_info' %>"><%= link_to "Class Info", '/class_info' %></div>--->
+            <div class="<%= 'selected-nav' if current_page == '/cpr' %>"><%= link_to "Learn CPR", '/cpr' %></div>
+            <div class="<%= 'selected-nav' if current_page == '/website' %>"><%= link_to "Website Info", '/website' %></div>
+        </div>
+    </div>
+    <div class="bookend right">
+        <% if current_user %>
+            <p>Signed in as: <%= current_user.first %>
+            <%= link_to "Sign Out", '/member_portal/logout' %></p>
+        <% else %>
+            <p><%= link_to "Log In", '/member_portal/login' %>
+                <%= link_to "Activate", '/member_portal/users/signup' %></p>
+        <% end %>
+    </div>
+</div>
+<div id="page-container">
+<%= yield %>
+</div>
+</body>
+</html>

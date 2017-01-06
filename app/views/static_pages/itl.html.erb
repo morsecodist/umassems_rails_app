@@ -1,0 +1,9 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content"><h1>Initial Training Liason Management</h1>
+<% if @openclose.sc_value == 'open' %>
+    <%= link_to "Close Registration", classtoggle_path, :method => :put %>
+<% else %>
+    <%= link_to "Open Registration", classtoggle_path, :method => :put  %>
+<% end %>
+</div>
+

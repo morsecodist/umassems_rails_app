@@ -1,0 +1,104 @@
+I"Š(function() {
+  var determine_class, refresh_class;
+
+  determine_class = function(box) {
+    var answer;
+    answer = 'completed';
+    box.find('input.one_assign').each(function() {
+      if ($(this).val() === 'None') {
+        return answer = 'failed';
+      }
+    });
+    box.find('input.two_assign').each(function() {
+      if ($(this).val() === 'None') {
+        return answer = 'failed';
+      }
+    });
+    if (answer === 'failed') {
+      return 'failed';
+    }
+    box.find('input.volunteer_assign').each(function() {
+      if ($(this).val() === 'None') {
+        return answer = 'pending';
+      }
+    });
+    return answer;
+  };
+
+  refresh_class = function() {
+    $(this).closest('.full-shift-box').removeClass('completed pending failed', 'fast');
+    return $(this).closest('.full-shift-box').addClass(determine_class($(this).closest('.full-shift-box')), 'fast');
+  };
+
+  $(function() {
+    $('#shift_date').datepicker({
+      orientation: 'top'
+    });
+    $('#shift_venue_name').autocomplete({
+      autoFocus: true,
+      source: function(request, response) {
+        return $.ajax({
+          url: "/member_portal/shift_management/venue_list.json",
+          dataType: 'json',
+          success: function(data) {
+            var matcher, re;
+            re = $.ui.autocomplete.escapeRegex(request.term);
+            matcher = new RegExp("^" + re, "i");
+            return response($.grep(data, function(item) {
+              return matcher.test(item);
+            }));
+          }
+        });
+      },
+      minLength: 1,
+      autoFill: true
+    });
+    $('#shift_event').autocomplete({
+      autoFocus: true,
+      source: function(request, response) {
+        return $.ajax({
+          url: "/member_portal/shift_management/event_list.json",
+          dataType: 'json',
+          success: function(data) {
+            var matcher, re;
+            re = $.ui.autocomplete.escapeRegex(request.term);
+            matcher = new RegExp("^" + re, "i");
+            return response($.grep(data, function(item) {
+              return matcher.test(item);
+            }));
+          }
+        });
+      },
+      minLength: 1,
+      autoFill: true
+    });
+    $('#time').timepicker({
+      timeFormat: 'H:i',
+      step: 5,
+      className: 'bloop'
+    });
+    return $('.user_input').autocomplete({
+      autoFocus: true,
+      source: function(request, response) {
+        return $.ajax({
+          url: "/member_portal/shift_management/user_names_list.json",
+          dataType: 'json',
+          success: function(data) {
+            var matcher, re;
+            re = $.ui.autocomplete.escapeRegex(request.term);
+            matcher = new RegExp("^" + re, "i");
+            return response($.grep(data, function(item) {
+              return matcher.test(item);
+            }));
+          }
+        });
+      },
+      minLength: 1,
+      autoFill: true
+    });
+  });
+
+  $(document).on('submit', '.assign_shift', refresh_class);
+
+}).call(this);
+:ET

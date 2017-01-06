@@ -1,0 +1,7 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+<h1>Certificates for <%= current_user.first %></h1>
+    <% @certificates.each do |certificate| %>
+    <%= render 'certificate.html.erb', :certificate => certificate %>
+    <% end %>
+</div>

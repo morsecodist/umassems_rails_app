@@ -1,0 +1,8 @@
+<div>
+    <div class = 'calendar_label'><%= week_range(week) %></div>
+    <div class = 'week'>
+        <% 7.times do |n| %>
+        <%= render 'day.html.erb', :day => week.beginning_of_week(:sunday) + n %>
+        <% end %>
+    </div>
+</div>

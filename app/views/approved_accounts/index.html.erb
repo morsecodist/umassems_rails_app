@@ -1,0 +1,17 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+<h1>Add New Members</h1>
+  <%= form_for :approved_account do |person| %>
+    <%= person.label :email %>:
+    <%= person.text_field :email %>
+    <%= person.select :division, ['Alpha', 'Bravo'] %>
+    <%= person.submit("Add") %>
+  <% end %>
+  <% @approved_accounts.each do |person| %>
+    <div>
+      <%= person.email %>
+      <%= person.division %>
+      <%= link_to "Delete", delete_approved_account_path(person.id),  :method => "patch" %>
+    </div>
+  <% end %>
+</div>

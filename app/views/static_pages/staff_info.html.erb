@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<div class="static-info">
+    <!-- This code is a monstrosity I will fix it one day...-->
+    <h1>Staff</h1>
+    <p>UmassEMS has several leadership and administrative positions that keep our organization running smoothly. These positions are divided into the categories you see below.</p>
+    <h2>Board of Directors</h2>
+    <p>The Board of Directors represent the upper level leadership of UmassEMS. They are elected each calendar year and serve one year terms.</p>
+    <div class="horizontal-container">
+      <%= render "staff_pane.html.erb", :staffer => @eduser %>
+      <%= render "staff_pane.html.erb", :staffer => @douser %>
+      <%= render "staff_pane.html.erb", :staffer => @dfuser %>
+      <%= render "staff_pane.html.erb", :staffer => @dauser %>
+      <%= render "staff_pane.html.erb", :staffer => @dtuser %>
+    </div>
+    <h2>Administrative Staff</h2>
+    <p>The Administrative Staff is critical to keep UmassEMS running. These positions are appointed by the directors each academic year.</p>
+    <div class="horizontal-container">
+      <%= render "staff_pane.html.erb", :staffer => @paruser %>
+      <%= render "staff_pane.html.erb", :staffer => @itluser %>
+      <%= render "staff_pane.html.erb", :staffer => @cpruser %>
+      <%= render "staff_pane.html.erb", :staffer => @emscuser %>
+      <%= render "staff_pane.html.erb", :staffer => @ituser %>
+    </div>
+    <h2>Division Heads</h2>
+    <p>UmassEMS is growing fast so starting this academic year we have introduced several middle management positions. Members of UmassEMS are now divided into divisions, each one headed by a Division Head. Division heads represent the middle leadership of UmassEMS and they are appointed by the directors each academic year.</p>
+    <h3>Individual Bios Coming Soon!</h3>
+    <h2>Field Supervisors</h2>
+    <p>UmassEMS is growing fast so starting this academic year we have introduced several middle management positions. Members of UmassEMS are now divided into divisions, which are then divided into groups. Each group is lead by a Field Supervisor. Field Supervisors also represent the middle leadership of UmassEMS and they are appointed by the directors each academic year.</p>
+    <h3>Individual Bios Coming Soon!</h3>
+</div>

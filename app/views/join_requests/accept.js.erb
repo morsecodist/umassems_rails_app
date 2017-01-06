@@ -1,0 +1,15 @@
+/*global $*/
+$(document).ready(function () {
+    "use strict";
+    $('.accept_request').unbind();
+});
+
+$('.accept_request').on('ajax:success', function () {
+    "use strict";
+    if ($(this).closest('.join_request_box').hasClass('pending')) {
+        $(this).closest('.join_request_box').fadeOut();
+        $('#processed_requests').prepend("<%= j render @join_request %>");
+    } else {
+        $(this).closest('.join_request_box').removeClass('failed').addClass('completed').fadeIn('slow');
+    }
+});

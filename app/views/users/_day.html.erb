@@ -1,0 +1,6 @@
+<div>
+    <p class = "calendar_label <%= 'today' if Date.today == day %>"><%= day.strftime('%A %d') %></p>
+    <% @shifts.select { |shift| shift.shift_time.to_date == day }.each do |shift| %>
+    <%= render 'small_shift.html.erb', :user_shift => shift %>
+    <% end %>
+</div>

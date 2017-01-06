@@ -1,0 +1,152 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Stylings for static pages */
+/* Some of these need to be deleted */
+.info_page {
+	position: relative;
+	text-align: center;
+}
+
+div.inline {
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    background-size: cover;
+}
+
+div.bluebutton a:link {
+    padding: 10px;
+    background-color:#040774;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+}
+
+div.bluebutton a:visited {
+    padding: 10px;
+    background-color:#040774;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+}
+
+div.bluebutton a:active {
+    padding: 10px;
+    background-color:#4747c9;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+}
+
+div.bluebutton a:hover {
+    padding: 10px;
+    background-color:#4747c9;
+    text-decoration: none;
+    color: white;
+    border-radius: 2px;
+}
+
+.class-open {
+    font-size: 20px;
+    border: 1px solid green;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: darkseagreen;
+}
+
+.class-closed {
+    font-size: 20px;
+    border: 1px solid red;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fd5757;
+}
+
+
+.dumb-box {
+    padding: 20px;
+    border: 5px solid blue;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.center-cont img {
+    width: auto;
+    height: 50px;
+    padding: 20px;
+}
+
+.center-cont {
+    display: inline;
+    width: 100%;
+    text-align: center;
+}
+
+.column-cont {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+}
+
+.column-cont > div {
+    flex: 1 0 50%;
+    align-content: center;
+}
+.column-cont > div > form > div{
+    align-self: center;
+    width: inherit;
+    padding: 5px;
+}
+
+.center-cont > div {
+    display: inline;
+}
+
+.static-info {
+    margin: 20px;
+    padding: 10px;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.horizontal-container > div {
+    padding: 10px;
+    min-width: 400px;
+    flex: 0 1 500px;
+}
+
+img.almostall {
+    width: 75%;
+    height: auto;
+    margin: 20px;
+}
+
+ol {
+    text-align: left;
+}
+
+#quickfacts p {
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}

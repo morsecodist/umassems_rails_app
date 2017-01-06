@@ -1,0 +1,19 @@
+<div class="static-info">
+  <h1>Sign In</h1>
+  <div class="noticediv">
+  <% flash.each do |key, msg| %>
+    <%= content_tag :div, msg, :id => key %>
+  <% end %>
+  </div>
+    <%= form_tag '/member_portal/login' do %>
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit", :class => 'hvr-grow' %>
+<% end %>
+    <p>New to the portal? click <%= link_to "here", '/member_portal/users/signup'%> to activate your account.</p>
+    <h1>Temporary Links</h1>
+    <p>While management sets up the portal please use the old links to access shift information</p>
+    <a class = "temp_link" href="">Shifts</a></br>
+    <a class = "temp_link" href="">Points</a></br>
+    <a class = "temp_link" href="">Calendar</a>
+</div>

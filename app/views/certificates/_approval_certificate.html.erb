@@ -1,0 +1,27 @@
+<div class = "triple_state <%= certificate.status %> join_request_box">
+    <div class = 'visible'>
+        <div><p><%= certificate.cert_type %></p></div>
+        <div class="xholder">
+            <%= link_to accept_cert_path(certificate.id), remote: true, method: "patch", :class => "accept_request" do %>
+            <%= image_tag "check.svg" %>
+        <% end %>
+    </div>
+    <div class="xholder">
+        <%= link_to reject_cert_path(certificate.id), remote: true, method: "patch", :class => "reject_request" do %>
+            <%= image_tag "delete85.svg" %>
+        <% end %>
+    </div>
+    </div>
+    <div class = 'hidden certificate'>
+        <div class = 'column-cont'>
+            <div><%= image_tag certificate.front.url %></div>
+            <div><%= image_tag certificate.back.url %></div>
+        </div>
+        <p>
+        <span class = 'bold'>Number:</span>
+        <%= certificate.number %>
+        <span class = 'bold'>Expiration Date:</span>
+        <%= certificate.expiration_date.strftime("%m/%d/%Y") %>
+        </p>
+    </div>
+</div>

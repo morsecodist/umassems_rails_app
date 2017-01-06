@@ -1,0 +1,52 @@
+<div id="sidebar">
+    <% if current_page == user_page_path(current_user.id) %>
+        <%= link_to "My Profile", user_page_path(current_user.id), :class => "selected" %>
+    <% else %>
+        <%= link_to "My Profile", user_page_path(current_user.id) %>
+    <% end %>
+    <% if current_page == account_settings_path(current_user.id) %>
+        <%= link_to "Account Settings", account_settings_path(current_user.id), :class => "selected" %>
+    <% else %>
+        <%= link_to "Account Settings", account_settings_path(current_user.id) %>
+    <% end %>
+    <% if current_page == user_shifts_path(current_user.id) %>
+        <%= link_to "Pick Shifts", user_shifts_path(current_user.id), :class => "selected"%>
+    <% else %>
+        <%= link_to "Pick Shifts", user_shifts_path(current_user.id) %>
+    <% end %>
+    <% if current_page == user_certs_path(current_user.id) %>
+        <%= link_to "My Certs", user_certs_path(current_user.id), :class => "selected" %>
+    <% else %>
+        <%= link_to "My Certs", user_certs_path(current_user.id) %>
+    <% end %>
+    <% if  current_page == "/member_portal/shift_management" %>
+        <%= link_to "Manage Shifts", '/member_portal/shift_management', :class => "selected" %>
+    <% elsif ops_director? %>
+        <%= link_to "Manage Shifts", '/member_portal/shift_management' %>
+    <% end %>
+    <% if  current_page == "/member_portal/shift_archive" %>
+        <%= link_to "Shifts Archive", '/member_portal/shift_archive', :class => "selected" %>
+    <% elsif ops_director? %>
+        <%= link_to "Shifts Archive", '/member_portal/shift_archive' %>
+    <% end %>
+    <% if  current_page == "/member_portal/itl" %>
+        <%= link_to "Class Registration", '/member_portal/itl', :class => "selected" %>
+    <% elsif training_liason? %>
+        <%= link_to "Class Registration", '/member_portal/itl' %>
+    <% end %>
+    <% if  current_page == "/member_portal/join_requests" %>
+        <%= link_to "Pending Join Applications", '/member_portal/join_requests', :class => "selected" %>
+    <% elsif executive_director? %>
+        <%= link_to "Pending Join Applications", '/member_portal/join_requests' %>
+    <% end %>
+    <% if  current_page == "/member_portal/certs" %>
+        <%= link_to "Pending Certs", '/member_portal/certs', :class => "selected" %>
+    <% elsif admin_director? %>
+        <%= link_to "Pending Certs", '/member_portal/certs' %>
+    <% end %>
+    <% if  current_page == "/member_portal/add_members" %>
+        <%= link_to "Add Members", '/member_portal/add_members', :class => "selected" %>
+    <% elsif admin_director? %>
+        <%= link_to "Add Members", '/member_portal/add_members' %>
+    <% end %>
+</div>

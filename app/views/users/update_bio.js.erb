@@ -1,0 +1,10 @@
+/*global $, jQuery, alert*/
+$("#update-bio").bind('ajax:success', function () {
+    "use strict";
+    $("#update-bio").toggle();
+    $("#self-bio p").remove();
+    $("#bioedit").before("<p><%= j @user.bio %></p>");
+    $('#self-bio').show();
+    $('#update-bio').hide();
+    $('#update-bio textarea').val("<%= j @user.bio %>");
+});

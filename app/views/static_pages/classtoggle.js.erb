@@ -1,0 +1,4 @@
+/*global $, jQuery, alert*/
+$('div#openclosecontainer').empty();
+$('p').remove();
+$('div#openclosecontainer').append("<div id='openclosecontainer'> <p class=<%= if @openclosemessage.include? 'open' then 'class-open' else 'class-closed' end %>><%= @openclosemessage %></p> <% if training_liason? %> <% if @openclose.sc_value == 'open' %> <%= link_to 'Close Registration. Yes ' + current_user.first + ', only you can see this.', classtoggle_path, :method => :put, remote: true %> <% else %> <%= link_to 'Open Registration. Yes ' + current_user.first + ', only you can see this.', classtoggle_path, :method => :put, remote: true  % <% end %> <% end %> </div>");

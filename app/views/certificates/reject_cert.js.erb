@@ -1,0 +1,15 @@
+/*global $*/
+$(document).ready(function () {
+    "use strict";
+    $('.reject_request').unbind();
+});
+
+$('.reject_request').on('ajax:success', function () {
+    "use strict";
+    if ($(this).closest('.join_request_box').hasClass('pending')) {
+        $(this).closest('.join_request_box').fadeOut();
+        $('#processed_requests').prepend("<%= j render 'approval_certificate.html.erb', :certificate => @certificate %>");
+    } else {
+        $(this).closest('.join_request_box').removeClass('completed').addClass('failed').fadeIn('slow');
+    }
+});

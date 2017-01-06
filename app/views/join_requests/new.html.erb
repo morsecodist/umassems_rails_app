@@ -1,0 +1,91 @@
+<div class="form_page">
+<div>
+    <h1>Apply to University of Massachusettes Emergency Medical Services</h1>
+    <p class ="help_text"><span class="red">*</span> indicates required field</p>
+<%= form_for @join_request do |form| %>
+<p>First Name <span class="red">*</span></p>
+<%= form.text_field :first %>
+<p>Last Name <span class="red">*</span></p>
+<%= form.text_field :last, :class => if @failed && @join_request.last.length <= 0 then 'missing' else '' end %>
+<p>Umass Student ID <span class="red">*</span></p>
+<%= form.text_field :student_id, :class => if @failed && @join_request.student_id.length <= 0 then 'missing' else '' end %>
+<p>Umass Email <span class="red">*</span></p>
+<%= form.text_field :email, :class => if @failed && @join_request.email.length <= 0 then 'missing' else '' end %>
+<p>Year of Graduation <span class="red">*</span></p>
+<p class = "help_text">From current umass program you are enrolled in</p>
+<%= form.text_field :grad_year, :class => if @failed && @join_request.grad_year.length <= 0 then 'missing' else '' end %>
+<p>Primary Major <span class="red">*</span></p>
+<p class = "help_text">Or program if graduate student</p>
+<%= form.text_field :major, :class => if @failed && @join_request.major.length <= 0 then 'missing' else '' end %>
+<p>Intended Career Path</p>
+
+<%= form.radio_button :career_goal, "Physician" %>
+<%= form.label :career_goal, "Physician", value: "Physician" %></br>
+    
+<%= form.radio_button :career_goal, "Nurse" %>
+<%= form.label :career_goal, "Nurse", value: "Nurse" %></br>
+
+<%= form.radio_button :career_goal, "Physician's Assistant (PA)" %>
+<%= form.label :career_goal, "Physician's Assistant (PA)", value: "Physician's Assistant (PA)" %></br>
+
+<%= form.radio_button :career_goal, "Nurse Practitioner (NP)" %>
+<%= form.label :career_goal, "Nurse Practitioner (NP)", value: "Nurse Practitioner (NP)" %></br>
+
+<%= form.radio_button :career_goal, "Career Firefighter/EMT/Paramedic"%>
+<%= form.label :career_goal, "Career Firefighter/EMT/Paramedic", value: "Career Firefighter/EMT/Paramedic" %></br>
+
+<label>
+<%= form.radio_button :career_goal, "Other" %>
+    Other
+<%= form.text_field :career_goal, :id => "join_request_career_goal_input" %>
+</label>
+<div class="<%= if @failed && @join_request.cert_source.length <= 0 then 'missing' else '' end %>">
+<p>Through which MA EMT certification program did you obtain your certification? <span class="red">*</span></p>
+<%= form.radio_button :cert_source, "PECE, UMass Amherst" %>
+<%= form.label :cert_source, "PECE, UMass Amherst", value: "PECE, UMass Amherst" %></br>
+
+<label>
+<%= form.radio_button :cert_source, "Other" %>
+    Other
+<%= form.text_field :cert_source, :id => "join_request_cert_source_input" %>
+</label></br>
+</div>
+<p>Massachusetts EMT Certification Number <span class="red">*</span></p>
+<%= form.text_field :emt_number %>
+<p>Massachusetts EMT Certification Expiration Date <span class="red">*</span></p>
+<%= form.text_field :emt_exp_date, :class => if @failed && @join_request.emt_exp_date.length <= 0 then 'missing' else '' end %>
+<p>CPR Card Expiration (Last day of month listed on card) <span class="red">*</span></p>
+<%= form.text_field :cpr_exp_date, :class => if @failed && @join_request.cpr_exp_date.length <= 0 then 'missing' else '' end %>
+<p>NREMT Certification Number <span class="red">*</span></p>
+<%= form.text_field :nremt_number, :class => if @failed && @join_request.nremt_number.length <= 0 then 'missing' else '' end %>
+<p>Other Relevant Certifications</p>
+<%= form.text_area :other_certs %>
+<div class="<%= if @failed && !@join_request.none then 'missing' else '' end %>">
+<p>Prior EMS Experience <span class="red">*</span></p>
+<label>
+<%= form.check_box :none %>
+None, this would be my first job in the EMS field
+</label></br>
+<div class="not_none">
+<label>
+    <%= form.check_box :ma_ambulance, :class => "checkbox" %>
+Private Ambulance in MA
+</label></br>
+<label>
+<%= form.check_box :ma_fire, :class => "checkbox" %>
+Fire Department in MA
+</label></br>
+<label>
+<%= form.check_box :fire_ambulance, :class => "checkbox" %>
+Fire Dept. or Private Ambulance OUTSIDE Massachusetts
+</label>
+</div>
+</div>
+<p>If this is not your first EMS job, please elaborate on your prior experience</p>
+<%= form.text_area :other_experience %>
+<p>Is there anything else you feel we should know about you?</p>
+<%= form.text_area :other_info %></br>
+<%= form.submit "Apply" , :id => "new_join_submit" %>
+<% end %>
+</div>
+</div>

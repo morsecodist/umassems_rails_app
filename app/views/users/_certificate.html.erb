@@ -1,0 +1,27 @@
+<div class = "triple_state <%= certificate.status %>">
+    <div class = 'visible'>
+        <div><p><%= certificate.cert_type %></p></div>
+    </div>
+    <div class = 'hidden certificate'>
+        <p><%= if certificate.expiration_date && certificate.expiration_date < DateTime.now then "Expired!" end %></p>
+        <% if certificate.front_file_name && certificate.back_file_name %>
+        <div class = 'column-cont'>
+            <div><%= image_tag certificate.front.url %></div>
+            <div><%= image_tag certificate.back.url %></div>
+        </div>
+        <% else %>
+            <p>Please upload your certificate</p>
+        <% end %>
+        <%= form_for :certificate, :url => upload_cert_path(certificate.id), :method => :patch, :class => "upload_cert", :multipart => true do |cert| %>
+        <p class = 'same_line'><span class = 'bold'><%= cert.label :front %>:</span>
+        <%= cert.file_field :front %></p>
+        <p class = 'same_line'><span class = 'bold'><%= cert.label :back %>:</span>
+        <%= cert.file_field :back %></p>
+        <p class = 'same_line'><span class = 'bold'><%= cert.label :number %>:</span>
+        <%= cert.text_field :number, :value => (certificate.number if certificate.number) %></p>
+        <p class = 'same_line'><span class = 'bold'><%= cert.label :expiration_date %>:</span>
+        <%= cert.text_field :expiration_date, :value => (certificate.expiration_date.strftime("%m/%d/%Y") if certificate.expiration_date), :class => 'expiration_date' %></p>
+        <%= submit_tag "Upload Certificate" %>
+        <% end %>
+    </div>
+</div>

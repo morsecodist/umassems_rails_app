@@ -1,0 +1,49 @@
+<div class="static-info">
+<h1>Class Info</h1>
+<div id="openclosecontainer">
+<!--<p class=<%= if @openclosemessage.include? 'open' then 'class-open' else 'class-closed' end %>><%= @openclosemessage %></p>-->
+<p class='class-closed'>There is no Fall 2016 class offered</p>
+<% if training_liason? %>
+    <% if @openclose.sc_value == 'open' %>
+    <%= link_to "Click here to close Registration. Yes " + current_user.first + ", only you can see this.", classtoggle_path, :method => :put %>
+    <% else %>
+    <%= link_to "Click here to open Registration. Yes " + current_user.first + ", only you can see this.", classtoggle_path, :method => :put %>
+    <% end %>
+<% end %>
+</div>
+    <h1>About Our Class</h1>
+    <p>Our EMT class will prepare you to obtain the certification of Massachusettes EMT-Basic and become a Nationally Registered EMT. To obtain these certifications you must take the National Written EMT Exam as well as the Massachusettes State Psychomotor Skills Verification. Even though this is not a credit course it is as demanding as many other college courses with weekly textbook readings and comprehensive exams. The class consists of approximately 150 hours, split between didactic lectures and hands on learning, where practical skills will be learned and perfected. Online course work will supplement in class material. Current and former UMass EMS EMTs volunteer as teaching assistants throughout the class as well. You may take the Written and Psychomotor Exam after successful completion of the class. In order to work in the field as a provider, one will need to undergo the reciprocity process to acquire a state EMT- B license for the state that they wish to work in. It is up to that specific individual to obtain the state certification through the OEMS (Office of Emergency Medical Services) of the desired state. It is also up to that specific individual to obtain employment as an EMT-Basic. EMT certification is valid for approximately two years at both the National Registry and state level after successfully passing the certification exam. In order to maintain certification, all EMTs must take continuing education classes for approved credit and a refresher course within this two year cycle in order to be eligible for recertification. More detailed information on EMT certification and re-certification in Massachusetts can be found online through the Commonwealth's <a href="http://www.mass.gov/eohhs/gov/departments/dph/programs/hcq/oems/">Office of Emergency Medical Services</a>.</p>
+<div class="column-cont">
+<div id="quickfacts">
+    <h2>Quick Facts</h2>
+    <p><span class="bold">Cost:</span> $900</p>
+    <p><span class="bold">Sessions: </span>Fall, Spring</p>
+    <p><span class="bold">Meeting times: </span>Tuesdays and Thursdays 6:00 pm - 10:00pm and some Sundays</p>
+    <p><span class="bold">Location: </span>Draper Hall, Umass Amherst</p>
+    <p><span class="bold">Credits: </span>Not eligible for credit (not affiliated with any university)</p>
+    <p><span class="bold">Workload: </span>The workload of this class is equivalent to the workload of at least two standard 3-4 credit classes</p>
+    <p><span class="bold">Certifications Earned: </span>MA EMT-Basic, NREMT EMTB, Healthcare Providers CPR (additional $30)</p>
+    <p><span class="bold">Offered by: </span><a href= "http://www.pece911.org/">Pre-Hospital Emergency Care Educators (PECE)</a></p>
+    <p><span class="bold">Instructor: </span>Kevin Garvey, RN, EMT-I, I /C</p>
+    <p><span class="bold">Financial Aid: </span> Not elligable</p>
+    <p><span class="bold">Open to: </span>Anyone able to obtain Massachusettes EMT-Basic Certification</p>
+
+</div>
+<div>
+
+<h2>How to Join</h2>
+    <ol>
+        <li>Wait for registration to open (this will usually happen a month or so before the start of Fall semmester and Spring semmester)</li>
+        <!--<li>Download the <%= link_to "Class registration form", download_registration_form_url %> complete it</li>-->
+        <li>Download the Class registration form complete it</li>
+        <li>Mail the completed form, a $100 check Payable to "UMASS EMS", and a $300 check Payable to "PECE" to our address (this will hold your place in the class):</li>
+            <p>UMass EMS, c/o Environmental Health and Safety</p>
+            <p>Draper Hall University of Massachusetts</p>
+            <p>Amherst, MA 01003</p>
+        <li>Wait to be contacted confirming your spot is being held in the class</li>
+        <li>Be prepared to pay an additional $500 upon beginning the class</li>
+    </ol>
+<p></p>
+</div>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<%= render "layouts/sidebar" %>
+<div class="sidebared_content">
+    <h1>Profile page for <%= current_user.first %></h1>
+    <div id="profile-top">
+        <div class="image">
+            <%= image_tag(@user.photo.url(:standardized,timestamp: false)) %>
+            <%= form_for @user, :url => update_user_photo_path, :method => "patch", :id => "udate-photo", remote: true do |form|%>
+            <%= form.file_field :photo %></br>
+            <%= form.submit "Update Profile Picture" %>
+            <% end %>
+        </div>
+        <div>
+            <h1>About Me:</h1>
+            <div id="self-bio">
+                <p><%= current_user.bio %></p>
+                <button id="bioedit">Edit</button>
+            </div>
+                <%= form_tag update_user_bio_path, method: "patch", :id=>"update-bio", remote: true do %>
+                <%= text_area_tag(:bio, current_user.bio) %></br>
+                <%= submit_tag("Update") %>
+                <% end %>
+        </div>
+    </div>
+    <div>
+        <h1>Upcoming Shifts</h1>
+        <div class="shifts-list">
+            <% @shifts.each do |user_shift| %>
+                <%= render 'user_shift.html.erb', :user_shift => user_shift %>
+            <% end %>
+        </div>
+    </div>
+</div>

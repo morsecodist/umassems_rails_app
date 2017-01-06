@@ -1,0 +1,11 @@
+I"Ë(function() {
+  $(function() {
+    $('#update-bio').hide();
+    return $('#bioedit').click(function() {
+      $('#self-bio').toggle();
+      return $('#update-bio').show();
+    });
+  });
+
+}).call(this);
+:ET

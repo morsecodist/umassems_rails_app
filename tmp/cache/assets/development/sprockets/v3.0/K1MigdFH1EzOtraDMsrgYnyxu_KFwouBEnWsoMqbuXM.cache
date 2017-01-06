@@ -1,0 +1,54 @@
+I"6(function() {
+  $(function() {
+    $('#new_join_submit').click(function() {
+      if ($('#join_request_cert_source_other').is(':checked')) {
+        $('#join_request_cert_source_other').val($('#join_request_cert_source_input').val());
+      }
+      if ($('#join_request_career_goal_other').is(':checked')) {
+        return $('#join_request_career_goal_other').val($('#join_request_career_goal_input').val());
+      }
+    });
+    $('#join_request_cert_source_input').click(function() {
+      $('#join_request_cert_source_other').prop('checked', true);
+      return $(this).removeClass("greytext");
+    });
+    $('#join_request_career_goal_input').click(function() {
+      $('#join_request_career_goal_other').prop('checked', true);
+      return $(this).removeClass('greytext');
+    });
+    $(document).click(function() {
+      if (!$('#join_request_cert_source_other').is(':checked')) {
+        $('#join_request_cert_source_input').addClass('greytext');
+      } else {
+        $('#join_request_cert_source_input').removeClass('greytext');
+      }
+      if (!$('#join_request_career_goal_other').is(':checked')) {
+        $('#join_request_career_goal_input').addClass('greytext');
+      } else {
+        $('#join_request_career_goal_input').removeClass('greytext');
+      }
+      if ($('#join_request_none').is(':checked')) {
+        return $('div.not_none input').attr('disabled', true).attr('checked', false);
+      } else {
+        return $('div.not_none input').removeAttr('disabled');
+      }
+    });
+    $('#processed_requests').hide();
+    $('#processed_button').click(function() {
+      $('#processed_button').addClass('selected');
+      $('#pending_button').removeClass('selected');
+      $('#pending_requests').hide();
+      $('#processed_requests').show();
+      return $('.hidden').hide();
+    });
+    return $('#pending_button').click(function() {
+      $('#processed_button').removeClass('selected');
+      $('#pending_button').addClass('selected');
+      $('#pending_requests').show();
+      $('#processed_requests').hide();
+      return $('.hidden').hide();
+    });
+  });
+
+}).call(this);
+:ET
